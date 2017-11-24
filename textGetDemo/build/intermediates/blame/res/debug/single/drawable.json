@@ -1,0 +1,30 @@
+[
+    {
+        "merged": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_viewpager_me_bg.xml",
+        "source": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\src\\main\\res\\drawable\\ic_viewpager_me_bg.xml"
+    },
+    {
+        "merged": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\build\\intermediates\\res\\merged\\debug\\drawable\\btn_invite.png",
+        "source": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\src\\main\\res\\drawable\\btn_invite.png"
+    },
+    {
+        "merged": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_viewpager_friend_bg.xml",
+        "source": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\src\\main\\res\\drawable\\ic_viewpager_friend_bg.xml"
+    },
+    {
+        "merged": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\build\\intermediates\\res\\merged\\debug\\drawable\\btn_invite1.png",
+        "source": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\src\\main\\res\\drawable\\btn_invite1.png"
+    },
+    {
+        "merged": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_viewpager_scene_bg.xml",
+        "source": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\src\\main\\res\\drawable\\ic_viewpager_scene_bg.xml"
+    },
+    {
+        "merged": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\build\\intermediates\\res\\merged\\debug\\drawable\\bg.xml",
+        "source": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\src\\main\\res\\drawable\\bg.xml"
+    },
+    {
+        "merged": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_viewpager_app_bg.xml",
+        "source": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\src\\main\\res\\drawable\\ic_viewpager_app_bg.xml"
+    }
+]

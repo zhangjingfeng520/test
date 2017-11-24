@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.myapplication.MyBroadcastActivity">
+
+    <include layout="@layout/toolbar"/>
+    <Button
+        android:id="@+id/broadcast_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="发起广播"
+        />
+
+    <Button
+        android:id="@+id/notification_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="发起通知"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/start_service_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="启动service"
+            />
+        <Button
+            android:id="@+id/stop_service_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="停止service"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/start_monitor_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="启动service保活"
+            />
+        <Button
+            android:id="@+id/stop_monitor_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="停止service保活"
+            />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/bind_service_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="绑定service"
+        />
+    <Button
+        android:id="@+id/Unbind_service_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="解除绑定service"
+        />
+    <Button
+        android:id="@+id/show_number_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="i"
+        />
+
+
+</LinearLayout>

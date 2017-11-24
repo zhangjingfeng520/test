@@ -1,0 +1,54 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#f0f0f0" >
+
+    <RadioGroup
+        android:id="@+id/view_main_radio"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/view_radio_connect"
+            style="@style/main_viewpager_bottom"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:drawableBottom="@drawable/ic_viewpager_friend_bg"
+            android:tag="radio_button1" />
+
+        <RadioButton
+            android:id="@+id/view_radio_scene"
+            style="@style/main_viewpager_bottom"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:drawableBottom="@drawable/ic_viewpager_scene_bg"
+            android:gravity="center_horizontal"
+            android:tag="radio_button0" />
+
+        <RadioButton
+            android:id="@+id/view_radio_app"
+            style="@style/main_viewpager_bottom"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:drawableBottom="@drawable/ic_viewpager_app_bg"
+            android:tag="radio_button2" />
+
+        <RadioButton
+            android:id="@+id/view_radio_myself"
+            style="@style/main_viewpager_bottom"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:drawableBottom="@drawable/ic_viewpager_me_bg"
+            android:tag="radio_button3" />
+    </RadioGroup>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager_main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/view_main_radio" >
+    </android.support.v4.view.ViewPager>
+
+</RelativeLayout>

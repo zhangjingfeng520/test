@@ -1,0 +1,34 @@
+[
+    {
+        "merged": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_viewpager_app_h.png",
+        "source": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\src\\main\\res\\drawable-mdpi\\ic_viewpager_app_h.png"
+    },
+    {
+        "merged": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_viewpager_me_h.png",
+        "source": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\src\\main\\res\\drawable-mdpi\\ic_viewpager_me_h.png"
+    },
+    {
+        "merged": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_viewpager_scene.png",
+        "source": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\src\\main\\res\\drawable-mdpi\\ic_viewpager_scene.png"
+    },
+    {
+        "merged": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_viewpager_friend.png",
+        "source": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\src\\main\\res\\drawable-mdpi\\ic_viewpager_friend.png"
+    },
+    {
+        "merged": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_viewpager_app.png",
+        "source": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\src\\main\\res\\drawable-mdpi\\ic_viewpager_app.png"
+    },
+    {
+        "merged": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_viewpager_sence_h.png",
+        "source": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\src\\main\\res\\drawable-mdpi\\ic_viewpager_sence_h.png"
+    },
+    {
+        "merged": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_viewpager_me.png",
+        "source": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\src\\main\\res\\drawable-mdpi\\ic_viewpager_me.png"
+    },
+    {
+        "merged": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_viewpager_friend_h.png",
+        "source": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\src\\main\\res\\drawable-mdpi\\ic_viewpager_friend_h.png"
+    }
+]

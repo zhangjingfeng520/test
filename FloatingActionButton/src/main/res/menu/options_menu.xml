@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navItem1"
+        android:icon="@mipmap/ic_launcher"
+        android:title="Item" />
+    <item
+        android:id="@+id/navItem2"
+        android:icon="@mipmap/ic_launcher_round"
+        android:title="Item" />
+
+</menu>

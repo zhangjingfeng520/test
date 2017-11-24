@@ -1,0 +1,46 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+	android:orientation="vertical" >
+	
+    <TextView
+        android:id="@+id/tv_def"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_def" />
+    
+    <!-- 
+        max=100,代表它的取值范围是0-100,共101个值;
+        progress=10,代表默认值是10  
+    -->
+    <SeekBar
+        android:id="@+id/seekbar_def"
+        android:layout_width="620px"
+        android:layout_height="wrap_content"
+        android:max="100"
+        android:progress="10"
+        />
+    
+    <TextView
+        android:id="@+id/tv_self"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_self" />
+    
+    <!-- 
+        max=100,代表它的取值范围是0-100,共101个值;
+        progress=20,代表默认值是20
+        progressDrawable,表示SeekBar的背景图片
+        thumbe,表示SeekBar的滑块图片  
+    -->
+    <SeekBar
+		android:id="@+id/seekbar_self"
+		android:layout_width="620px"  
+        android:layout_height="wrap_content"
+        android:max="100"
+        android:progress="20"
+        android:progressDrawable="@drawable/bg_bar"
+        android:thumb="@drawable/thumb_bar" /> 
+    
+</LinearLayout>

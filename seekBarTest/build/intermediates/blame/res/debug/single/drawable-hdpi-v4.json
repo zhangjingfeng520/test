@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "F:\\ruanko_android\\ZReader\\Test\\seekBarTest\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\bg_bar.xml",
+        "source": "F:\\ruanko_android\\ZReader\\Test\\seekBarTest\\src\\main\\res\\drawable-hdpi\\bg_bar.xml"
+    },
+    {
+        "merged": "F:\\ruanko_android\\ZReader\\Test\\seekBarTest\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\thumb_bar.xml",
+        "source": "F:\\ruanko_android\\ZReader\\Test\\seekBarTest\\src\\main\\res\\drawable-hdpi\\thumb_bar.xml"
+    }
+]

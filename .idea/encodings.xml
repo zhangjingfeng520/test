@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" native2AsciiForPropertiesFiles="true" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/FloatingActionButton/src/main/java/com/example/myapplication/BooksByCatsActivity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/FloatingActionButton/src/main/java/com/example/myapplication/MPAndroidChartActivity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/FloatingActionButton/src/main/java/com/example/myapplication/MapActivity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/FloatingActionButton/src/main/java/com/example/myapplication/MySwipeRefreshActivity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/FloatingActionButton/src/main/java/com/example/myapplication/adapter/SortAdapter.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/FloatingActionButton/src/main/java/com/example/myapplication/api/ApiService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/FloatingActionButton/src/main/java/com/example/myapplication/base/BaseActivity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/FloatingActionButton/src/main/java/com/example/myapplication/bean/ContactSortModel.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/FloatingActionButton/src/main/java/com/example/myapplication/bean/Info.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/FloatingActionButton/src/main/java/com/example/myapplication/bean/jsonbean/BooksByCats.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/FloatingActionButton/src/main/java/com/example/myapplication/fragment/LineChartFragment.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/FloatingActionButton/src/main/java/com/example/myapplication/fragment/PieChartFragment.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/FloatingActionButton/src/main/java/com/example/myapplication/mapapi/clusterutil/MarkerManager.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/FloatingActionButton/src/main/java/com/example/myapplication/mapapi/clusterutil/clustering/Cluster.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/FloatingActionButton/src/main/java/com/example/myapplication/mapapi/clusterutil/clustering/ClusterItem.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/FloatingActionButton/src/main/java/com/example/myapplication/mapapi/clusterutil/clustering/ClusterManager.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/FloatingActionButton/src/main/java/com/example/myapplication/mapapi/clusterutil/clustering/algo/Algorithm.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/FloatingActionButton/src/main/java/com/example/myapplication/mapapi/clusterutil/clustering/algo/NonHierarchicalDistanceBasedAlgorithm.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/FloatingActionButton/src/main/java/com/example/myapplication/mapapi/clusterutil/clustering/algo/PreCachingAlgorithmDecorator.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/FloatingActionButton/src/main/java/com/example/myapplication/mapapi/clusterutil/clustering/algo/StaticCluster.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/FloatingActionButton/src/main/java/com/example/myapplication/mapapi/clusterutil/clustering/view/ClusterRenderer.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/FloatingActionButton/src/main/java/com/example/myapplication/mapapi/clusterutil/clustering/view/DefaultClusterRenderer.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/FloatingActionButton/src/main/java/com/example/myapplication/mapapi/clusterutil/projection/Bounds.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/FloatingActionButton/src/main/java/com/example/myapplication/mapapi/clusterutil/projection/Point.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/FloatingActionButton/src/main/java/com/example/myapplication/mapapi/clusterutil/projection/SphericalMercatorProjection.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/FloatingActionButton/src/main/java/com/example/myapplication/mapapi/clusterutil/quadtree/PointQuadTree.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/FloatingActionButton/src/main/java/com/example/myapplication/mapapi/clusterutil/ui/IconGenerator.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/FloatingActionButton/src/main/java/com/example/myapplication/mapapi/clusterutil/ui/RotationLayout.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/FloatingActionButton/src/main/java/com/example/myapplication/mapapi/clusterutil/ui/SquareTextView.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/FloatingActionButton/src/main/java/com/example/myapplication/mapapi/overlayutil/BikingRouteOverlay.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/FloatingActionButton/src/main/java/com/example/myapplication/mapapi/overlayutil/BusLineOverlay.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/FloatingActionButton/src/main/java/com/example/myapplication/mapapi/overlayutil/DrivingRouteOverlay.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/FloatingActionButton/src/main/java/com/example/myapplication/mapapi/overlayutil/IndoorPoiOverlay.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/FloatingActionButton/src/main/java/com/example/myapplication/mapapi/overlayutil/IndoorRouteOverlay.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/FloatingActionButton/src/main/java/com/example/myapplication/mapapi/overlayutil/MassTransitRouteOverlay.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/FloatingActionButton/src/main/java/com/example/myapplication/mapapi/overlayutil/OverlayManager.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/FloatingActionButton/src/main/java/com/example/myapplication/mapapi/overlayutil/PoiOverlay.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/FloatingActionButton/src/main/java/com/example/myapplication/mapapi/overlayutil/TransitRouteOverlay.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/FloatingActionButton/src/main/java/com/example/myapplication/mapapi/overlayutil/WalkingRouteOverlay.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/FloatingActionButton/src/main/java/com/example/myapplication/mapapi/overlayutil/package.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/FloatingActionButton/src/main/java/com/example/myapplication/utils/PinyinUtils.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/FloatingActionButton/src/main/java/com/example/myapplication/view/ClearEditText.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/FloatingActionButton/src/main/java/com/example/myapplication/view/SideBar.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/FloatingActionButton/src/main/java/com/example/myapplication/view/SwipeRefreshView.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/textGetDemo/build.gradle" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/textGetDemo/src/main/java/com/example/reader/AboutDialog.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/textGetDemo/src/main/java/com/example/reader/LocalBook.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/textGetDemo/src/main/java/com/example/reader/MarkHelper.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/textGetDemo/src/main/java/com/example/reader/Read.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/viewpage/src/main/java/com/example/viewpage/MainActivity.java" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:id="@+id/group1">
+        <item
+            android:id="@+id/navItem1"
+            android:icon="@mipmap/ic_launcher"
+            android:title="Item" />
+        <item
+            android:id="@+id/navItem2"
+            android:icon="@mipmap/ic_launcher_round"
+            android:title="Item" />
+    </group>
+    <group android:id="@+id/group2">
+        <item
+            android:id="@+id/navItem3"
+            android:icon="@mipmap/ic_launcher"
+            android:title="Item" />
+        <item
+            android:id="@+id/navItem4"
+            android:icon="@mipmap/ic_launcher"
+            android:title="Item" />
+    </group>
+</menu>

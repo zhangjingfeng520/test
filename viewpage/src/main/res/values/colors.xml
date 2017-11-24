@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#4EA1E3</color>
+    <color name="colorPrimaryDark">#4EA1E3</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="xuanzhong">#FFFFFF</color>
+    <color name="weixuanzhong">#666</color>
+    <color name="title">#EEEEEE</color>
+    <color name="white">#FFFFFF</color>
+
+
+</resources>

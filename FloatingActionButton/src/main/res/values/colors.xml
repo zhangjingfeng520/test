@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#2196f3</color>
+    <color name="colorPrimaryDark">#2196f3</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="primary_material_light">#4ea1e3</color>
+    <color name="primary_dark_material_light">#4ea1e3</color>
+    <color name="accent_material_light">#ff4081</color>
+    <color name="foreground_material_light">#eeeeee</color>
+    <color name="hui">#aaaaaa</color>
+    <color name="qianhui">#eeeeee</color>
+    <color name="test">#4F41FD</color>
+</resources>

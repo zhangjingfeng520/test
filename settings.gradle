@@ -1,0 +1,3 @@
+include ':FloatingActionButton', ':viewpage'
+include ':seekBarTest'
+include ':textGetDemo'
