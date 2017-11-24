@@ -20,6 +20,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.example.myapplication.base.BaseActivity;
+import com.example.myapplication.broadcast.StartActivityReceiver;
 import com.example.myapplication.service.MonitorService;
 import com.example.myapplication.service.TestService;
 
@@ -45,6 +46,7 @@ public class MyBroadcastActivity extends BaseActivity implements ServiceConnecti
         registerReceiver(myBroadcast, intentFilter);
         //通知
         notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        notificationManager.cancel(123321);
         notificationManager.cancel(R.layout.activity_my_broad_cast);
         //service
         serviceIntent=new Intent(this, TestService.class);
@@ -57,7 +59,8 @@ public class MyBroadcastActivity extends BaseActivity implements ServiceConnecti
         findViewById(R.id.broadcast_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MyBroadcast.ACTION);
+//                Intent intent = new Intent(MyBroadcast.ACTION);
+                Intent intent=new Intent(getApplicationContext(),StartActivityReceiver.class);
                 intent.putExtra("zjf", "123");
                 sendBroadcast(intent);
             }

@@ -26,7 +26,7 @@
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <!-- 拨号盘 -->
     <uses-permission android:name="android.permission.CALL_PHONE" />
-    <!--开机广播-->
+    <!-- 开机广播 -->
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
     <application
@@ -45,23 +45,32 @@
             android:enabled="true"
             android:process=":remote" />
         //测试
-        <service android:name=".service.TestService" />
+        <service
+            android:name=".service.TestService"
+            android:process=":push" />
         //保活
-        <service android:name=".service.MonitorService" />
+        <service android:name=".service.MonitorService"
+            android:process=":push"/>
         //开机receiver
         <receiver
             android:name=".broadcast.BootCompleteReceiver"
             android:enabled="true"
-            android:exported="true">
+            android:exported="true"
+            android:process=":push">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
+        //启动Activity
+        <receiver
+            android:name=".broadcast.StartActivityReceiver"
+            android:enabled="true"
+            android:exported="true"
+            android:process=":push"></receiver>
 
         <activity
             android:name=".MainActivity"
-            android:launchMode="singleTask"
-            android:exported="true">
+            android:launchMode="standard">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -71,7 +80,9 @@
         <activity
             android:name=".LoginActivity"
             android:label="@string/title_activity_login" />
-        <activity android:name=".TestActivity" />
+        <activity
+            android:name=".TestActivity"
+            android:exported="true" />
         <activity android:name=".MapActivity" />
         <activity
             android:name=".MessageActivity"
@@ -86,8 +97,8 @@
             android:theme="@style/ContactsAppTheme" />
         <activity
             android:name=".MyBroadcastActivity"
+            android:exported="true"
             android:launchMode="singleTop" />
-
     </application>
 
 </manifest>
