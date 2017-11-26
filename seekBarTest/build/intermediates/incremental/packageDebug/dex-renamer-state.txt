@@ -1,7 +1,0 @@
-#Fri Nov 24 14:57:39 CST 2017
-base.0=F\:\\ruanko_android\\ZReader\\Test\\seekBarTest\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_fb9d705bd399629c77e69956b5c9696c8560afce
-renamed.1=classes2.dex
-renamed.0=classes.dex
-file.1=F\:\\ruanko_android\\ZReader\\Test\\seekBarTest\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_197d0c0c351b7b23ad84a6352e4a0127a08e1655\\classes.dex
-base.1=F\:\\ruanko_android\\ZReader\\Test\\seekBarTest\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_197d0c0c351b7b23ad84a6352e4a0127a08e1655
-file.0=F\:\\ruanko_android\\ZReader\\Test\\seekBarTest\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_fb9d705bd399629c77e69956b5c9696c8560afce\\classes.dex

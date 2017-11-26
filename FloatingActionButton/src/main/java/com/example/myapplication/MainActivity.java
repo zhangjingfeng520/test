@@ -200,7 +200,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         startActivity(intent);
                         break;
                     case 13:
-                        intent.setClass(MainActivity.this,MyBroadcastActivity.class);
+                        intent.setClass(MainActivity.this,DialerActivity.class);
                         startActivity(intent);
                         break;
                     default:
