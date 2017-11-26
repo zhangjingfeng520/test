@@ -49,8 +49,9 @@
             android:name=".service.TestService"
             android:process=":push" />
         //保活
-        <service android:name=".service.MonitorService"
-            android:process=":push"/>
+        <service
+            android:name=".service.MonitorService"
+            android:process=":push" />
         //开机receiver
         <receiver
             android:name=".broadcast.BootCompleteReceiver"
@@ -66,7 +67,7 @@
             android:name=".broadcast.StartActivityReceiver"
             android:enabled="true"
             android:exported="true"
-            android:process=":push"></receiver>
+            android:process=":push" />
 
         <activity
             android:name=".MainActivity"
@@ -99,6 +100,7 @@
             android:name=".MyBroadcastActivity"
             android:exported="true"
             android:launchMode="singleTop" />
+        <activity android:name=".DialerActivity"></activity>
     </application>
 
 </manifest>

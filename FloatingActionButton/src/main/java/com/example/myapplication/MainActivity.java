@@ -102,6 +102,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         myMapList.add(new MyMap("图表", "10"));
         myMapList.add(new MyMap("通讯录", "11"));
         myMapList.add(new MyMap("广播.通知.服务", "12"));
+        myMapList.add(new MyMap("拨号盘", "13"));
 
     }
 
@@ -195,6 +196,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                     REQUEST_CODE_CONTACTS);
                         break;
                     case 12:
+                        intent.setClass(MainActivity.this,MyBroadcastActivity.class);
+                        startActivity(intent);
+                        break;
+                    case 13:
                         intent.setClass(MainActivity.this,MyBroadcastActivity.class);
                         startActivity(intent);
                         break;
