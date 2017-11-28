@@ -2,5 +2,9 @@
     {
         "merged": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\build\\intermediates\\res\\merged\\debug\\menu\\main.xml",
         "source": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\src\\main\\res\\menu\\main.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\test\\textGetDemo\\build\\intermediates\\res\\merged\\debug\\menu\\main.xml",
+        "source": "F:\\AndroidProject\\test\\textGetDemo\\src\\main\\res\\menu\\main.xml"
     }
 ]

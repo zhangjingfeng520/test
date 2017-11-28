@@ -3,9 +3,14 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/FloatingActionButton/FloatingActionButton.iml" filepath="$PROJECT_DIR$/FloatingActionButton/FloatingActionButton.iml" />
+      <module fileurl="file://$PROJECT_DIR$/FloatingActionButton/FloatingActionButton.iml" filepath="$PROJECT_DIR$/FloatingActionButton/FloatingActionButton.iml" />
       <module fileurl="file://$PROJECT_DIR$/Test.iml" filepath="$PROJECT_DIR$/Test.iml" />
       <module fileurl="file://$PROJECT_DIR$/seekBarTest/seekBarTest.iml" filepath="$PROJECT_DIR$/seekBarTest/seekBarTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/seekBarTest/seekBarTest.iml" filepath="$PROJECT_DIR$/seekBarTest/seekBarTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/test.iml" filepath="$PROJECT_DIR$/test.iml" />
       <module fileurl="file://$PROJECT_DIR$/textGetDemo/textGetDemo.iml" filepath="$PROJECT_DIR$/textGetDemo/textGetDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textGetDemo/textGetDemo.iml" filepath="$PROJECT_DIR$/textGetDemo/textGetDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/viewpage/viewpage.iml" filepath="$PROJECT_DIR$/viewpage/viewpage.iml" />
       <module fileurl="file://$PROJECT_DIR$/viewpage/viewpage.iml" filepath="$PROJECT_DIR$/viewpage/viewpage.iml" />
     </modules>
   </component>

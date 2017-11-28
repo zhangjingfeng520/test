@@ -1,5 +1,9 @@
 [
     {
+        "merged": "F:\\AndroidProject\\test\\textGetDemo\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\icon.jpg",
+        "source": "F:\\AndroidProject\\test\\textGetDemo\\src\\main\\res\\drawable-mdpi\\icon.jpg"
+    },
+    {
         "merged": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\icon.jpg",
         "source": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\src\\main\\res\\drawable-mdpi\\icon.jpg"
     }

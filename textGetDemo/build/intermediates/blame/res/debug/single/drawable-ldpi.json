@@ -4,6 +4,10 @@
         "source": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\src\\main\\res\\drawable-ldpi\\ic_viewpager_me.png"
     },
     {
+        "merged": "F:\\AndroidProject\\test\\textGetDemo\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi\\ic_viewpager_me_h.png",
+        "source": "F:\\AndroidProject\\test\\textGetDemo\\src\\main\\res\\drawable-ldpi\\ic_viewpager_me_h.png"
+    },
+    {
         "merged": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi\\ic_viewpager_sence_h.png",
         "source": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\src\\main\\res\\drawable-ldpi\\ic_viewpager_sence_h.png"
     },
@@ -12,8 +16,24 @@
         "source": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\src\\main\\res\\drawable-ldpi\\ic_viewpager_app.png"
     },
     {
+        "merged": "F:\\AndroidProject\\test\\textGetDemo\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi\\ic_viewpager_me.png",
+        "source": "F:\\AndroidProject\\test\\textGetDemo\\src\\main\\res\\drawable-ldpi\\ic_viewpager_me.png"
+    },
+    {
         "merged": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi\\ic_viewpager_scene.png",
         "source": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\src\\main\\res\\drawable-ldpi\\ic_viewpager_scene.png"
+    },
+    {
+        "merged": "F:\\AndroidProject\\test\\textGetDemo\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi\\ic_viewpager_friend_h.png",
+        "source": "F:\\AndroidProject\\test\\textGetDemo\\src\\main\\res\\drawable-ldpi\\ic_viewpager_friend_h.png"
+    },
+    {
+        "merged": "F:\\AndroidProject\\test\\textGetDemo\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi\\ic_viewpager_app_h.png",
+        "source": "F:\\AndroidProject\\test\\textGetDemo\\src\\main\\res\\drawable-ldpi\\ic_viewpager_app_h.png"
+    },
+    {
+        "merged": "F:\\AndroidProject\\test\\textGetDemo\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi\\ic_viewpager_friend.png",
+        "source": "F:\\AndroidProject\\test\\textGetDemo\\src\\main\\res\\drawable-ldpi\\ic_viewpager_friend.png"
     },
     {
         "merged": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi\\ic_viewpager_friend_h.png",
@@ -30,5 +50,17 @@
     {
         "merged": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi\\ic_viewpager_friend.png",
         "source": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\src\\main\\res\\drawable-ldpi\\ic_viewpager_friend.png"
+    },
+    {
+        "merged": "F:\\AndroidProject\\test\\textGetDemo\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi\\ic_viewpager_scene.png",
+        "source": "F:\\AndroidProject\\test\\textGetDemo\\src\\main\\res\\drawable-ldpi\\ic_viewpager_scene.png"
+    },
+    {
+        "merged": "F:\\AndroidProject\\test\\textGetDemo\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi\\ic_viewpager_sence_h.png",
+        "source": "F:\\AndroidProject\\test\\textGetDemo\\src\\main\\res\\drawable-ldpi\\ic_viewpager_sence_h.png"
+    },
+    {
+        "merged": "F:\\AndroidProject\\test\\textGetDemo\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi\\ic_viewpager_app.png",
+        "source": "F:\\AndroidProject\\test\\textGetDemo\\src\\main\\res\\drawable-ldpi\\ic_viewpager_app.png"
     }
 ]

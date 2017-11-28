@@ -4,36 +4,148 @@
         "source": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\src\\main\\res\\layout\\frist.xml"
     },
     {
-        "merged": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\build\\intermediates\\res\\merged\\debug\\layout\\frist_hots_item.xml",
-        "source": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\src\\main\\res\\layout\\frist_hots_item.xml"
-    },
-    {
         "merged": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\build\\intermediates\\res\\merged\\debug\\layout\\frist_list_item.xml",
         "source": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\src\\main\\res\\layout\\frist_list_item.xml"
     },
     {
-        "merged": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\build\\intermediates\\res\\merged\\debug\\layout\\toolpop.xml",
-        "source": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\src\\main\\res\\layout\\toolpop.xml"
+        "merged": "F:\\AndroidProject\\test\\textGetDemo\\build\\intermediates\\res\\merged\\debug\\layout\\search_item.xml",
+        "source": "F:\\AndroidProject\\test\\textGetDemo\\src\\main\\res\\layout\\search_item.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\test\\textGetDemo\\build\\intermediates\\res\\merged\\debug\\layout\\tool22.xml",
+        "source": "F:\\AndroidProject\\test\\textGetDemo\\src\\main\\res\\layout\\tool22.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\test\\textGetDemo\\build\\intermediates\\res\\merged\\debug\\layout\\list_item.xml",
+        "source": "F:\\AndroidProject\\test\\textGetDemo\\src\\main\\res\\layout\\list_item.xml"
     },
     {
         "merged": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\build\\intermediates\\res\\merged\\debug\\layout\\read.xml",
         "source": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\src\\main\\res\\layout\\read.xml"
     },
     {
-        "merged": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\build\\intermediates\\res\\merged\\debug\\layout\\book_detail.xml",
-        "source": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\src\\main\\res\\layout\\book_detail.xml"
+        "merged": "F:\\AndroidProject\\test\\textGetDemo\\build\\intermediates\\res\\merged\\debug\\layout\\tool44.xml",
+        "source": "F:\\AndroidProject\\test\\textGetDemo\\src\\main\\res\\layout\\tool44.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\test\\textGetDemo\\build\\intermediates\\res\\merged\\debug\\layout\\myself.xml",
+        "source": "F:\\AndroidProject\\test\\textGetDemo\\src\\main\\res\\layout\\myself.xml"
     },
     {
         "merged": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\build\\intermediates\\res\\merged\\debug\\layout\\tool11.xml",
         "source": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\src\\main\\res\\layout\\tool11.xml"
     },
     {
+        "merged": "F:\\AndroidProject\\test\\textGetDemo\\build\\intermediates\\res\\merged\\debug\\layout\\about.xml",
+        "source": "F:\\AndroidProject\\test\\textGetDemo\\src\\main\\res\\layout\\about.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\test\\textGetDemo\\build\\intermediates\\res\\merged\\debug\\layout\\item_mark.xml",
+        "source": "F:\\AndroidProject\\test\\textGetDemo\\src\\main\\res\\layout\\item_mark.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\test\\textGetDemo\\build\\intermediates\\res\\merged\\debug\\layout\\loadding.xml",
+        "source": "F:\\AndroidProject\\test\\textGetDemo\\src\\main\\res\\layout\\loadding.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\test\\textGetDemo\\build\\intermediates\\res\\merged\\debug\\layout\\toolpop.xml",
+        "source": "F:\\AndroidProject\\test\\textGetDemo\\src\\main\\res\\layout\\toolpop.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\test\\textGetDemo\\build\\intermediates\\res\\merged\\debug\\layout\\look.xml",
+        "source": "F:\\AndroidProject\\test\\textGetDemo\\src\\main\\res\\layout\\look.xml"
+    },
+    {
+        "merged": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\build\\intermediates\\res\\merged\\debug\\layout\\look.xml",
+        "source": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\src\\main\\res\\layout\\look.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\test\\textGetDemo\\build\\intermediates\\res\\merged\\debug\\layout\\book_detail.xml",
+        "source": "F:\\AndroidProject\\test\\textGetDemo\\src\\main\\res\\layout\\book_detail.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\test\\textGetDemo\\build\\intermediates\\res\\merged\\debug\\layout\\frist_hots_item.xml",
+        "source": "F:\\AndroidProject\\test\\textGetDemo\\src\\main\\res\\layout\\frist_hots_item.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\test\\textGetDemo\\build\\intermediates\\res\\merged\\debug\\layout\\bookpop.xml",
+        "source": "F:\\AndroidProject\\test\\textGetDemo\\src\\main\\res\\layout\\bookpop.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\test\\textGetDemo\\build\\intermediates\\res\\merged\\debug\\layout\\list.xml",
+        "source": "F:\\AndroidProject\\test\\textGetDemo\\src\\main\\res\\layout\\list.xml"
+    },
+    {
+        "merged": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\build\\intermediates\\res\\merged\\debug\\layout\\mymark.xml",
+        "source": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\src\\main\\res\\layout\\mymark.xml"
+    },
+    {
+        "merged": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\build\\intermediates\\res\\merged\\debug\\layout\\list.xml",
+        "source": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\src\\main\\res\\layout\\list.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\test\\textGetDemo\\build\\intermediates\\res\\merged\\debug\\layout\\search.xml",
+        "source": "F:\\AndroidProject\\test\\textGetDemo\\src\\main\\res\\layout\\search.xml"
+    },
+    {
+        "merged": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\build\\intermediates\\res\\merged\\debug\\layout\\search.xml",
+        "source": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\src\\main\\res\\layout\\search.xml"
+    },
+    {
+        "merged": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\build\\intermediates\\res\\merged\\debug\\layout\\about.xml",
+        "source": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\src\\main\\res\\layout\\about.xml"
+    },
+    {
+        "merged": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\build\\intermediates\\res\\merged\\debug\\layout\\loadding.xml",
+        "source": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\src\\main\\res\\layout\\loadding.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\test\\textGetDemo\\build\\intermediates\\res\\merged\\debug\\layout\\read.xml",
+        "source": "F:\\AndroidProject\\test\\textGetDemo\\src\\main\\res\\layout\\read.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\test\\textGetDemo\\build\\intermediates\\res\\merged\\debug\\layout\\tool33.xml",
+        "source": "F:\\AndroidProject\\test\\textGetDemo\\src\\main\\res\\layout\\tool33.xml"
+    },
+    {
+        "merged": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\build\\intermediates\\res\\merged\\debug\\layout\\frist_hots_item.xml",
+        "source": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\src\\main\\res\\layout\\frist_hots_item.xml"
+    },
+    {
+        "merged": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\build\\intermediates\\res\\merged\\debug\\layout\\toolpop.xml",
+        "source": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\src\\main\\res\\layout\\toolpop.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\test\\textGetDemo\\build\\intermediates\\res\\merged\\debug\\layout\\mymark.xml",
+        "source": "F:\\AndroidProject\\test\\textGetDemo\\src\\main\\res\\layout\\mymark.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\test\\textGetDemo\\build\\intermediates\\res\\merged\\debug\\layout\\local_item.xml",
+        "source": "F:\\AndroidProject\\test\\textGetDemo\\src\\main\\res\\layout\\local_item.xml"
+    },
+    {
+        "merged": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\build\\intermediates\\res\\merged\\debug\\layout\\book_detail.xml",
+        "source": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\src\\main\\res\\layout\\book_detail.xml"
+    },
+    {
         "merged": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\build\\intermediates\\res\\merged\\debug\\layout\\local_item.xml",
         "source": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\src\\main\\res\\layout\\local_item.xml"
     },
     {
+        "merged": "F:\\AndroidProject\\test\\textGetDemo\\build\\intermediates\\res\\merged\\debug\\layout\\frist.xml",
+        "source": "F:\\AndroidProject\\test\\textGetDemo\\src\\main\\res\\layout\\frist.xml"
+    },
+    {
         "merged": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\build\\intermediates\\res\\merged\\debug\\layout\\myself.xml",
         "source": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\src\\main\\res\\layout\\myself.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\test\\textGetDemo\\build\\intermediates\\res\\merged\\debug\\layout\\frist_list_item.xml",
+        "source": "F:\\AndroidProject\\test\\textGetDemo\\src\\main\\res\\layout\\frist_list_item.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\test\\textGetDemo\\build\\intermediates\\res\\merged\\debug\\layout\\tool11.xml",
+        "source": "F:\\AndroidProject\\test\\textGetDemo\\src\\main\\res\\layout\\tool11.xml"
     },
     {
         "merged": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\build\\intermediates\\res\\merged\\debug\\layout\\search_item.xml",
@@ -48,20 +160,20 @@
         "source": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\src\\main\\res\\layout\\tool44.xml"
     },
     {
-        "merged": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\build\\intermediates\\res\\merged\\debug\\layout\\look.xml",
-        "source": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\src\\main\\res\\layout\\look.xml"
+        "merged": "F:\\AndroidProject\\test\\textGetDemo\\build\\intermediates\\res\\merged\\debug\\layout\\local.xml",
+        "source": "F:\\AndroidProject\\test\\textGetDemo\\src\\main\\res\\layout\\local.xml"
     },
     {
-        "merged": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\build\\intermediates\\res\\merged\\debug\\layout\\local.xml",
-        "source": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\src\\main\\res\\layout\\local.xml"
+        "merged": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\build\\intermediates\\res\\merged\\debug\\layout\\tool33.xml",
+        "source": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\src\\main\\res\\layout\\tool33.xml"
     },
     {
         "merged": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\build\\intermediates\\res\\merged\\debug\\layout\\bookpop.xml",
         "source": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\src\\main\\res\\layout\\bookpop.xml"
     },
     {
-        "merged": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\build\\intermediates\\res\\merged\\debug\\layout\\tool33.xml",
-        "source": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\src\\main\\res\\layout\\tool33.xml"
+        "merged": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\build\\intermediates\\res\\merged\\debug\\layout\\local.xml",
+        "source": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\src\\main\\res\\layout\\local.xml"
     },
     {
         "merged": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\build\\intermediates\\res\\merged\\debug\\layout\\tool22.xml",
@@ -76,23 +188,7 @@
         "source": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\src\\main\\res\\layout\\main.xml"
     },
     {
-        "merged": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\build\\intermediates\\res\\merged\\debug\\layout\\mymark.xml",
-        "source": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\src\\main\\res\\layout\\mymark.xml"
-    },
-    {
-        "merged": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\build\\intermediates\\res\\merged\\debug\\layout\\list.xml",
-        "source": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\src\\main\\res\\layout\\list.xml"
-    },
-    {
-        "merged": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\build\\intermediates\\res\\merged\\debug\\layout\\search.xml",
-        "source": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\src\\main\\res\\layout\\search.xml"
-    },
-    {
-        "merged": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\build\\intermediates\\res\\merged\\debug\\layout\\about.xml",
-        "source": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\src\\main\\res\\layout\\about.xml"
-    },
-    {
-        "merged": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\build\\intermediates\\res\\merged\\debug\\layout\\loadding.xml",
-        "source": "F:\\ruanko_android\\ZReader\\Test\\textGetDemo\\src\\main\\res\\layout\\loadding.xml"
+        "merged": "F:\\AndroidProject\\test\\textGetDemo\\build\\intermediates\\res\\merged\\debug\\layout\\main.xml",
+        "source": "F:\\AndroidProject\\test\\textGetDemo\\src\\main\\res\\layout\\main.xml"
     }
 ]

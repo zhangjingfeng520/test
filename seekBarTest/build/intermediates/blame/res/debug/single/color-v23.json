@@ -1,7 +1,15 @@
 [
     {
+        "merged": "F:\\AndroidProject\\test\\seekBarTest\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_btn_checkable.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\a36948f0810250397b2cf283b417da6430df0677\\output\\res\\color-v23\\abc_tint_btn_checkable.xml"
+    },
+    {
         "merged": "F:\\ruanko_android\\ZReader\\Test\\seekBarTest\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_switch_track.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\a36948f0810250397b2cf283b417da6430df0677\\output\\res\\color-v23\\abc_tint_switch_track.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\test\\seekBarTest\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_btn_colored_text_material.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\a36948f0810250397b2cf283b417da6430df0677\\output\\res\\color-v23\\abc_btn_colored_text_material.xml"
     },
     {
         "merged": "F:\\ruanko_android\\ZReader\\Test\\seekBarTest\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_edittext.xml",
@@ -16,16 +24,44 @@
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\a36948f0810250397b2cf283b417da6430df0677\\output\\res\\color-v23\\abc_tint_switch_thumb.xml"
     },
     {
+        "merged": "F:\\AndroidProject\\test\\seekBarTest\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_spinner.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\a36948f0810250397b2cf283b417da6430df0677\\output\\res\\color-v23\\abc_tint_spinner.xml"
+    },
+    {
         "merged": "F:\\ruanko_android\\ZReader\\Test\\seekBarTest\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_btn_colored_borderless_text_material.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\a36948f0810250397b2cf283b417da6430df0677\\output\\res\\color-v23\\abc_btn_colored_borderless_text_material.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\test\\seekBarTest\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_seek_thumb.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\a36948f0810250397b2cf283b417da6430df0677\\output\\res\\color-v23\\abc_tint_seek_thumb.xml"
     },
     {
         "merged": "F:\\ruanko_android\\ZReader\\Test\\seekBarTest\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_seek_thumb.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\a36948f0810250397b2cf283b417da6430df0677\\output\\res\\color-v23\\abc_tint_seek_thumb.xml"
     },
     {
+        "merged": "F:\\AndroidProject\\test\\seekBarTest\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_switch_track.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\a36948f0810250397b2cf283b417da6430df0677\\output\\res\\color-v23\\abc_tint_switch_track.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\test\\seekBarTest\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_default.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\a36948f0810250397b2cf283b417da6430df0677\\output\\res\\color-v23\\abc_tint_default.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\test\\seekBarTest\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_edittext.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\a36948f0810250397b2cf283b417da6430df0677\\output\\res\\color-v23\\abc_tint_edittext.xml"
+    },
+    {
         "merged": "F:\\ruanko_android\\ZReader\\Test\\seekBarTest\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_btn_colored_text_material.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\a36948f0810250397b2cf283b417da6430df0677\\output\\res\\color-v23\\abc_btn_colored_text_material.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\test\\seekBarTest\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_color_highlight_material.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\a36948f0810250397b2cf283b417da6430df0677\\output\\res\\color-v23\\abc_color_highlight_material.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\test\\seekBarTest\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_switch_thumb.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\a36948f0810250397b2cf283b417da6430df0677\\output\\res\\color-v23\\abc_tint_switch_thumb.xml"
     },
     {
         "merged": "F:\\ruanko_android\\ZReader\\Test\\seekBarTest\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_color_highlight_material.xml",
@@ -38,5 +74,9 @@
     {
         "merged": "F:\\ruanko_android\\ZReader\\Test\\seekBarTest\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_default.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\a36948f0810250397b2cf283b417da6430df0677\\output\\res\\color-v23\\abc_tint_default.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\test\\seekBarTest\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_btn_colored_borderless_text_material.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\a36948f0810250397b2cf283b417da6430df0677\\output\\res\\color-v23\\abc_btn_colored_borderless_text_material.xml"
     }
 ]

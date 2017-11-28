@@ -1,5 +1,21 @@
 [
     {
+        "merged": "F:\\AndroidProject\\test\\seekBarTest\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_launcher.png",
+        "source": "F:\\AndroidProject\\test\\seekBarTest\\src\\main\\res\\drawable-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "F:\\AndroidProject\\test\\seekBarTest\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\thumb_up.png",
+        "source": "F:\\AndroidProject\\test\\seekBarTest\\src\\main\\res\\drawable-hdpi\\thumb_up.png"
+    },
+    {
+        "merged": "F:\\AndroidProject\\test\\seekBarTest\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\thumb_dn.png",
+        "source": "F:\\AndroidProject\\test\\seekBarTest\\src\\main\\res\\drawable-hdpi\\thumb_dn.png"
+    },
+    {
+        "merged": "F:\\AndroidProject\\test\\seekBarTest\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\bar_up.png",
+        "source": "F:\\AndroidProject\\test\\seekBarTest\\src\\main\\res\\drawable-hdpi\\bar_up.png"
+    },
+    {
         "merged": "F:\\ruanko_android\\ZReader\\Test\\seekBarTest\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\bar_dn.png",
         "source": "F:\\ruanko_android\\ZReader\\Test\\seekBarTest\\src\\main\\res\\drawable-hdpi\\bar_dn.png"
     },
@@ -10,6 +26,10 @@
     {
         "merged": "F:\\ruanko_android\\ZReader\\Test\\seekBarTest\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\bar_up.png",
         "source": "F:\\ruanko_android\\ZReader\\Test\\seekBarTest\\src\\main\\res\\drawable-hdpi\\bar_up.png"
+    },
+    {
+        "merged": "F:\\AndroidProject\\test\\seekBarTest\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\bar_dn.png",
+        "source": "F:\\AndroidProject\\test\\seekBarTest\\src\\main\\res\\drawable-hdpi\\bar_dn.png"
     },
     {
         "merged": "F:\\ruanko_android\\ZReader\\Test\\seekBarTest\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\thumb_dn.png",
