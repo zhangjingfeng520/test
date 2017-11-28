@@ -47,7 +47,6 @@ import com.baidu.mapapi.search.route.WalkingRouteResult;
 import com.example.myapplication.bean.Info;
 import com.example.myapplication.mapapi.overlayutil.WalkingRouteOverlay;
 import com.example.myapplication.sensor.MyOrientationListener;
-import com.example.myapplication.tool.ActivityCollector;
 
 import java.util.List;
 
@@ -82,7 +81,7 @@ public class MapActivity extends AppCompatActivity {
         SDKInitializer.initialize(getApplicationContext());
         setContentView(R.layout.activity_map);
         this.context = this;
-        ActivityCollector.addActivity(this);
+//        ActivityCollector.addActivity(this);
         initView();
         //初始化定位
         initLocation();
@@ -365,7 +364,7 @@ public class MapActivity extends AppCompatActivity {
         }
         mapView.onDestroy();
         mapView = null;
-        ActivityCollector.removeActivity(this);
+//        ActivityCollector.removeActivity(this);
     }
 
     @Override

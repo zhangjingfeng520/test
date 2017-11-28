@@ -49,7 +49,6 @@ import android.widget.Toast;
 
 import com.example.myapplication.adapter.MyMapAdapter;
 import com.example.myapplication.bean.MyMap;
-import com.example.myapplication.tool.ActivityCollector;
 import com.example.myapplication.view.ClearEditText;
 import com.leon.lfilepickerlibrary.LFilePicker;
 import com.leon.lfilepickerlibrary.utils.Constant;
@@ -81,7 +80,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ActivityCollector.addActivity(this);
+//        ActivityCollector.addActivity(this);
         rootLayout = (CoordinatorLayout) findViewById(R.id.rootLayout);
         initData();
         initView();
@@ -103,6 +102,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         myMapList.add(new MyMap("通讯录", "11"));
         myMapList.add(new MyMap("广播.通知.服务", "12"));
         myMapList.add(new MyMap("拨号盘", "13"));
+        myMapList.add(new MyMap("数据存储", "14"));
 
     }
 
@@ -201,6 +201,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         break;
                     case 13:
                         intent.setClass(MainActivity.this,DialerActivity.class);
+                        startActivity(intent);
+                        break;
+                    case 14:
+                        intent.setClass(MainActivity.this,DataStorageActivity.class);
                         startActivity(intent);
                         break;
                     default:
@@ -553,6 +557,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        ActivityCollector.removeActivity(this);
+//        ActivityCollector.removeActivity(this);
     }
 }

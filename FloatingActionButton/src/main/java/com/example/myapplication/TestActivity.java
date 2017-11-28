@@ -17,11 +17,7 @@ import android.widget.ProgressBar;
 
 import com.example.myapplication.adapter.MyArrayAdapter;
 import com.example.myapplication.adapter.MyRecyclerAdapter;
-import com.example.myapplication.base.BaseActivity;
 import com.example.myapplication.bean.Info;
-import com.example.myapplication.tool.ActivityCollector;
-
-import java.util.List;
 
 public class TestActivity extends AppCompatActivity implements View.OnClickListener {
     Toolbar toolbar;
@@ -35,7 +31,7 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.test);
-        ActivityCollector.addActivity(this);
+//        ActivityCollector.addActivity(this);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         //设置actionbar返回，第一个是左上角小图标能否点击，第二是是否有小箭头,第三个隐藏标题
@@ -111,7 +107,7 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        ActivityCollector.removeActivity(this);
+//        ActivityCollector.removeActivity(this);
     }
 
 }

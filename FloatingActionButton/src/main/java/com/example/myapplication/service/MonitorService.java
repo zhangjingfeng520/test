@@ -88,7 +88,7 @@ public class MonitorService extends Service {
 //                Log.d(TAG, "monitorThread线程中断异常");
 //            }
 //        }
-//        isCheck=false;
+        isCheck=false;
 //        monitorThread.stop();
         super.onDestroy();
     }

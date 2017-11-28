@@ -1,7 +1,6 @@
 package com.example.myapplication;
 
 import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -92,6 +91,7 @@ public class BooksByCatsActivity extends BaseActivity implements View.OnClickLis
     @Override
     public void onRefresh() {
         start=0;
+        swipeRefreshLayout.setRefreshing(true);
         getBooksByCats();
     }
 

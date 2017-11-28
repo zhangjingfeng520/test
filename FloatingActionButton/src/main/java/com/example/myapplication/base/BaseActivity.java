@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 
 import com.example.myapplication.R;
+import com.example.myapplication.tool.ActivityCollector;
 
 import rx.Subscription;
 import rx.subscriptions.CompositeSubscription;
@@ -26,6 +27,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(getLayoutId());
         Log.i(TAG, getClass().getSimpleName());
+        ActivityCollector.addActivity(this);
         initToolbar();
         initData();
         initView();
@@ -69,5 +71,6 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         unSubscribe();
+        ActivityCollector.removeActivity(this);
     }
 }

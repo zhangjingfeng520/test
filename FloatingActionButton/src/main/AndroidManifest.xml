@@ -100,7 +100,8 @@
             android:name=".MyBroadcastActivity"
             android:exported="true"
             android:launchMode="singleTop" />
-        <activity android:name=".DialerActivity"></activity>
+        <activity android:name=".DialerActivity" />
+        <activity android:name=".DataStorageActivity"></activity>
     </application>
 
 </manifest>
