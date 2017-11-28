@@ -1,5 +1,9 @@
 [
     {
+        "merged": "F:\\AndroidProject\\test\\seekBarTest\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\ic_launcher.png",
+        "source": "F:\\AndroidProject\\test\\seekBarTest\\src\\main\\res\\drawable-xxhdpi\\ic_launcher.png"
+    },
+    {
         "merged": "F:\\ruanko_android\\ZReader\\Test\\seekBarTest\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\ic_launcher.png",
         "source": "F:\\ruanko_android\\ZReader\\Test\\seekBarTest\\src\\main\\res\\drawable-xxhdpi\\ic_launcher.png"
     }

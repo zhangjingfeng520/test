@@ -2,5 +2,9 @@
     {
         "merged": "F:\\ruanko_android\\ZReader\\Test\\seekBarTest\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_launcher.png",
         "source": "F:\\ruanko_android\\ZReader\\Test\\seekBarTest\\src\\main\\res\\drawable-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "F:\\AndroidProject\\test\\seekBarTest\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_launcher.png",
+        "source": "F:\\AndroidProject\\test\\seekBarTest\\src\\main\\res\\drawable-mdpi\\ic_launcher.png"
     }
 ]
