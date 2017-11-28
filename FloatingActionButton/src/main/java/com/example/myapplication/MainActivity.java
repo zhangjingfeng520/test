@@ -103,7 +103,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         myMapList.add(new MyMap("通讯录", "11"));
         myMapList.add(new MyMap("广播.通知.服务", "12"));
         myMapList.add(new MyMap("拨号盘", "13"));
-        //
+
     }
 
     private void initView() {
