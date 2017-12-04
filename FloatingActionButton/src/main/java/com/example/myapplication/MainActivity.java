@@ -1,4 +1,4 @@
-package com.example.myapplication;
+﻿package com.example.myapplication;
 
 import android.Manifest;
 import android.animation.Animator;
@@ -103,6 +103,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         myMapList.add(new MyMap("广播.通知.服务", "12"));
         myMapList.add(new MyMap("拨号盘", "13"));
         myMapList.add(new MyMap("数据存储", "14"));
+//
 
     }
 
