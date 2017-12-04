@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding" native2AsciiForPropertiesFiles="true" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/FloatingActionButton/libs/bdasr_V3_20170929_c8984af.jar" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/FloatingActionButton/src/main/java/com/example/myapplication/BooksByCatsActivity.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/FloatingActionButton/src/main/java/com/example/myapplication/DataStorageActivity.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/FloatingActionButton/src/main/java/com/example/myapplication/DialerActivity.java" charset="UTF-8" />
@@ -48,6 +49,12 @@
     <file url="file://$PROJECT_DIR$/FloatingActionButton/src/main/java/com/example/myapplication/view/ClearEditText.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/FloatingActionButton/src/main/java/com/example/myapplication/view/SideBar.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/FloatingActionButton/src/main/java/com/example/myapplication/view/SwipeRefreshView.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/FloatingActionButton/src/main/jniLibs/arm64-v8a/libBaiduSpeechSDK.so" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/FloatingActionButton/src/main/jniLibs/arm64-v8a/libbdEASRAndroid.so" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/FloatingActionButton/src/main/jniLibs/arm64-v8a/libbd_easr_s1_merge_normal_20151216.dat.so" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/FloatingActionButton/src/main/jniLibs/arm64-v8a/libglobal.cmvn.so" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/FloatingActionButton/src/main/jniLibs/arm64-v8a/libvad.dnn.so" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/FloatingActionButton/src/main/res/layout/common.xml" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/textGetDemo/build.gradle" charset="GBK" />
     <file url="file://$PROJECT_DIR$/textGetDemo/src/main/java/com/example/reader/AboutDialog.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/textGetDemo/src/main/java/com/example/reader/LocalBook.java" charset="GBK" />
