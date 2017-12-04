@@ -1,4 +1,4 @@
-﻿package com.example.myapplication;
+package com.example.myapplication;
 
 import android.Manifest;
 import android.animation.Animator;
@@ -75,7 +75,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private static final int REQUEST_CODE_FILE = 100;
     private static final int REQUEST_CODE_CONTACTS = 101;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -103,7 +102,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         myMapList.add(new MyMap("广播.通知.服务", "12"));
         myMapList.add(new MyMap("拨号盘", "13"));
         myMapList.add(new MyMap("数据存储", "14"));
-//123
 
     }
 
@@ -197,15 +195,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                     REQUEST_CODE_CONTACTS);
                         break;
                     case 12:
-                        intent.setClass(MainActivity.this,MyBroadcastActivity.class);
+                        intent.setClass(MainActivity.this, MyBroadcastActivity.class);
                         startActivity(intent);
                         break;
                     case 13:
-                        intent.setClass(MainActivity.this,DialerActivity.class);
+                        intent.setClass(MainActivity.this, DialerActivity.class);
                         startActivity(intent);
                         break;
                     case 14:
-                        intent.setClass(MainActivity.this,DataStorageActivity.class);
+                        intent.setClass(MainActivity.this, DataStorageActivity.class);
                         startActivity(intent);
                         break;
                     default:
