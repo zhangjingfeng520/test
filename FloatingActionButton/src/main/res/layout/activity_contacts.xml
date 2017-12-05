@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,48 +8,68 @@
     tools:context="com.example.myapplication.ContactsActivity">
 
     <include layout="@layout/toolbar" />
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal">
 
-        <ListView
-            android:id="@+id/contacts_list_view"
-            android:layout_width="0dp"
-            android:layout_weight="1"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:visibility="visible"
-            android:scrollbars="none"></ListView>
+            android:orientation="horizontal">
 
-        <com.example.myapplication.view.SideBar
-            android:id="@+id/sidebar"
-            android:layout_width="20dp"
-            android:layout_height="match_parent" />
-    </LinearLayout>
+            <ListView
+                android:id="@+id/contacts_list_view"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:scrollbars="none"
+                android:visibility="visible"></ListView>
+
+            <com.example.myapplication.view.SideBar
+                android:id="@+id/sidebar"
+                android:layout_width="20dp"
+                android:layout_height="match_parent" />
+        </LinearLayout>
 
         <TextView
             android:id="@+id/tv_dialog"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:gravity="center"
-            android:text="A"
             android:layout_centerInParent="true"
             android:background="@color/hui"
-            android:visibility="gone"
-            />
+            android:gravity="center"
+            android:text="A"
+            android:visibility="gone" />
+
         <TextView
             android:id="@+id/tv_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="A.."
+            android:layout_marginRight="20dp"
             android:background="@color/qianhui"
             android:padding="5dp"
-            android:layout_marginRight="20dp"
-            />
+            android:text="A.." />
+
+        <android.support.design.widget.CoordinatorLayout
+            android:id="@+id/rootLayout"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_alignParentBottom="true">
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/add_fab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|right"
+                android:layout_marginBottom="@dimen/fab_margin_bottom"
+                android:layout_marginRight="@dimen/fab_margin_right"
+                android:backgroundTint="@color/colorPrimary"
+                android:src="@drawable/ic_plus"
+                app:borderWidth="0dp"
+                app:fabSize="mini" />
+        </android.support.design.widget.CoordinatorLayout>
     </RelativeLayout>
 
 

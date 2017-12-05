@@ -3,8 +3,66 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.example.myapplication.DataStorageActivity">
 
     <include layout="@layout/toolbar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+        <com.example.myapplication.view.ClearEditText
+            android:id="@+id/writer_et"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/writer_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="写" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+        <Button
+            android:id="@+id/reader_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="读" />
+
+        <TextView
+            android:id="@+id/reader_tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingLeft="5dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/create_database"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="创建数据库" />
+        <Button
+            android:id="@+id/add_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="添加数据"/>
+    </LinearLayout>
+
 
 </LinearLayout>

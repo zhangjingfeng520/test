@@ -22,13 +22,14 @@ import android.widget.Toast;
 import com.example.myapplication.base.BaseActivity;
 import com.example.myapplication.broadcast.StartActivityReceiver;
 import com.example.myapplication.service.MonitorService;
+import com.example.myapplication.service.PhoneService;
 import com.example.myapplication.service.TestService;
 
 public class MyBroadcastActivity extends BaseActivity implements ServiceConnection {
     MyBroadcast myBroadcast;
     IntentFilter intentFilter;
     NotificationManager notificationManager;
-    Intent serviceIntent,monitorIntent;
+    Intent serviceIntent,monitorIntent,servicePhoneIntent;
     TestService testService;
 
     @Override
@@ -51,6 +52,7 @@ public class MyBroadcastActivity extends BaseActivity implements ServiceConnecti
         //service
         serviceIntent=new Intent(this, TestService.class);
         monitorIntent=new Intent(this, MonitorService.class);
+        servicePhoneIntent=new Intent(this, PhoneService.class);
     }
 
     @Override
@@ -91,14 +93,16 @@ public class MyBroadcastActivity extends BaseActivity implements ServiceConnecti
         findViewById(R.id.start_service_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startService(serviceIntent);
+//                startService(serviceIntent);
+                startService(servicePhoneIntent);
             }
         });
         //停止Service
         findViewById(R.id.stop_service_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                stopService(serviceIntent);
+//                stopService(serviceIntent);
+                stopService(servicePhoneIntent);
             }
         });
         //绑定

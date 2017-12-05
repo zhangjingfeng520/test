@@ -10,6 +10,9 @@ import android.net.Uri;
 import android.provider.ContactsContract;
 import android.provider.Settings;
 import android.support.annotation.NonNull;
+import android.support.design.widget.CoordinatorLayout;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.SearchView;
@@ -35,14 +38,16 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class ContactsActivity extends BaseActivity implements SearchView.OnQueryTextListener {
+public class ContactsActivity extends BaseActivity implements SearchView.OnQueryTextListener, View.OnClickListener {
     private static final String TAG = "ContactsActivity";
     private ListView listView;
     private SideBar sideBar;
     private TextView dialog, title;
+    private FloatingActionButton addFAB;
     private List<ContactSortModel> list = new ArrayList<ContactSortModel>();
     private SortAdapter sortAdapter;
-    private int status=0;
+    private int status = 0;
+    private CoordinatorLayout rootLayout;
 
 
     @Override
@@ -64,6 +69,9 @@ public class ContactsActivity extends BaseActivity implements SearchView.OnQuery
         sideBar.setTextView(dialog);
         sortAdapter = new SortAdapter(this, list);
         listView.setAdapter(sortAdapter);
+        addFAB = (FloatingActionButton) findViewById(R.id.add_fab);
+        addFAB.setOnClickListener(this);
+        rootLayout = (CoordinatorLayout) findViewById(R.id.rootLayout);
         getPhoneContacts("我");
 
         initEvents();
@@ -97,7 +105,7 @@ public class ContactsActivity extends BaseActivity implements SearchView.OnQuery
 
             @Override
             public void onScroll(AbsListView absListView, int i, int i1, int i2) {
-                if(i>0) {
+                if (i > 0) {
                     dialog.setVisibility(View.VISIBLE);
                     Log.d("dispatchTouchEvent", "dispatchTouchEvent: 555");
                 }
@@ -105,13 +113,13 @@ public class ContactsActivity extends BaseActivity implements SearchView.OnQuery
                 title.setText(list.get(i).getSortLetters());
                 sideBar.changeChoose(list.get(i).getSortLetters());
                 Log.d(TAG, "onScroll: " + i);
-                if (listView.getLastVisiblePosition()==sortAdapter.getCount()-1){
+                if (listView.getLastVisiblePosition() == sortAdapter.getCount() - 1) {
 
                     dialog.setVisibility(View.GONE);
                 }
-                if (count>0){
-                    title.setText("找到 "+count+" 个联系人");
-                }else if(count==0){
+                if (count > 0) {
+                    title.setText("找到 " + count + " 个联系人");
+                } else if (count == 0) {
                     title.setText("没有找到联系人");
                 }
             }
@@ -232,17 +240,18 @@ public class ContactsActivity extends BaseActivity implements SearchView.OnQuery
     }
 
     List<ContactSortModel> sortModelList = new ArrayList<>();
-    int count=-1;
+    int count = -1;
+
     //按字母排序
     private void filterData(String filterStr) {
         if (TextUtils.isEmpty(filterStr)) {
             // 根据a-z进行排序
             Collections.sort(list, new PinyinComparator());
             sortAdapter.updateListView(list);
-            count=-1;
+            count = -1;
         } else {
             sortModelList.clear();
-            count=0;
+            count = 0;
             //
             for (ContactSortModel sortModel : list) {
                 String name = sortModel.getName();
@@ -272,7 +281,7 @@ public class ContactsActivity extends BaseActivity implements SearchView.OnQuery
                 if (!indexString.contains(sortString)) {
                     indexString.add(sortString);
                 }
-            }else {
+            } else {
                 sortModel.setSortLetters(sortString.toUpperCase());
                 if (!indexString.contains(sortString)) {
                     indexString.add(sortString);
@@ -283,5 +292,19 @@ public class ContactsActivity extends BaseActivity implements SearchView.OnQuery
         Collections.sort(indexString);
         sideBar.setIndexText(indexString);
         return mSortList;
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.add_fab:
+                Snackbar.make(rootLayout, "添加联系人", Snackbar.LENGTH_LONG).setAction("确定", new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+                    }
+                }).show();
+                break;
+        }
     }
 }

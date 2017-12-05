@@ -6,6 +6,7 @@ import android.animation.AnimatorListenerAdapter;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.net.Uri;
@@ -43,6 +44,7 @@ import android.view.animation.CycleInterpolator;
 import android.view.animation.TranslateAnimation;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -74,6 +76,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private static final String TAG = "zjf";
     private static final int REQUEST_CODE_FILE = 100;
     private static final int REQUEST_CODE_CONTACTS = 101;
+    SharedPreferences pref;
+    SharedPreferences.Editor editor;
 
 
     @Override
@@ -103,6 +107,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         myMapList.add(new MyMap("广播.通知.服务", "12"));
         myMapList.add(new MyMap("拨号盘", "13"));
         myMapList.add(new MyMap("数据存储", "14"));
+        myMapList.add(new MyMap("语音识别", "15"));
 
     }
 
@@ -207,6 +212,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         intent.setClass(MainActivity.this,DataStorageActivity.class);
                         startActivity(intent);
                         break;
+                    case 15:
+                        intent.setClass(MainActivity.this,ActivityMiniRecog.class);
+                        startActivity(intent);
                     default:
                         break;
                 }
@@ -443,6 +451,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ClearEditText userName, password;
     private Button login_button;
     private TextInputLayout userName_til, password_til;
+    private CheckBox checkBox;
     private View mProgressView;
     private View mLoginFormView;
     private boolean show = false;
@@ -460,7 +469,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         login_button = (Button) mView.findViewById(R.id.login_button);
         mLoginFormView = mView.findViewById(R.id.login_form);
         mProgressView = mView.findViewById(R.id.login_progress);
-
+        checkBox= (CheckBox) mView.findViewById(R.id.checkbox);
+        pref=getSharedPreferences("zjf",MODE_PRIVATE);
+        Boolean isRemember=pref.getBoolean("isRemember",false);
         AlertDialog.Builder alert = new AlertDialog.Builder(MainActivity.this);
         alert.setTitle("登陆")
                 .setMessage("")
@@ -472,6 +483,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 });
         final AlertDialog dialog = alert.create();
         dialog.show();
+
+        if(isRemember){
+            checkBox.setChecked(true);
+            ((ClearEditText)dialog.findViewById(R.id.userName)).setText(pref.getString("account",""));
+            ((ClearEditText)dialog.findViewById(R.id.password)).setText(pref.getString("password",""));
+        }
 
         userName.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
@@ -510,6 +527,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                 @Override
                                 public void onAnimationEnd(Animator animation) {
                                     if (password.getText().toString().equals("123")) {
+                                        editor = pref.edit();
+                                        if(checkBox.isChecked()) {
+                                            editor.putString("account", userName.getText().toString());
+                                            editor.putString("password", password.getText().toString());
+                                            editor.putBoolean("isRemember",true);
+                                        }else
+                                            editor.clear();
+                                        editor.apply();
                                         show = true;
                                     } else
                                         show = false;
