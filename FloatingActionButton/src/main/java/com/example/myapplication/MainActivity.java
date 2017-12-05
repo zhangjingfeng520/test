@@ -79,7 +79,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     SharedPreferences pref;
     SharedPreferences.Editor editor;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -201,15 +200,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                     REQUEST_CODE_CONTACTS);
                         break;
                     case 12:
-                        intent.setClass(MainActivity.this,MyBroadcastActivity.class);
+                        intent.setClass(MainActivity.this, MyBroadcastActivity.class);
                         startActivity(intent);
                         break;
                     case 13:
-                        intent.setClass(MainActivity.this,DialerActivity.class);
+                        intent.setClass(MainActivity.this, DialerActivity.class);
                         startActivity(intent);
                         break;
                     case 14:
-                        intent.setClass(MainActivity.this,DataStorageActivity.class);
+                        intent.setClass(MainActivity.this, DataStorageActivity.class);
                         startActivity(intent);
                         break;
                     case 15:
