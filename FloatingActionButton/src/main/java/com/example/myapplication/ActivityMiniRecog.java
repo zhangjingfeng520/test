@@ -27,6 +27,10 @@ import com.example.myapplication.service.PhoneService;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -55,6 +59,7 @@ public class ActivityMiniRecog extends AppCompatActivity implements EventListene
     private MyBroadcast myBroadcast;
     private static final String TAG = "ActivityMiniRecog";
     private Intent intent;
+
     /**
      * 测试参数填在这里
      */
@@ -66,9 +71,9 @@ public class ActivityMiniRecog extends AppCompatActivity implements EventListene
 
         params.put(SpeechConstant.ACCEPT_AUDIO_VOLUME, false);
         params.put(SpeechConstant.VAD, SpeechConstant.VAD_DNN);
-        params.put(SpeechConstant.ACCEPT_AUDIO_DATA,true);
-        params.put(SpeechConstant.OUT_FILE,Environment.getExternalStorageDirectory()+"/123.pcm");
-        if (enableOffline){
+        params.put(SpeechConstant.ACCEPT_AUDIO_DATA, true);
+        params.put(SpeechConstant.OUT_FILE, Environment.getExternalStorageDirectory() + "/123.pcm");
+        if (enableOffline) {
             params.put(SpeechConstant.DECODER, 2);
         }
         //  params.put(SpeechConstant.NLU, "enable");
@@ -82,6 +87,7 @@ public class ActivityMiniRecog extends AppCompatActivity implements EventListene
         Log.d(TAG, "start: ");
 //        startService(intent);
     }
+
     /**
      * 测试参数填在这里
      */
@@ -93,22 +99,35 @@ public class ActivityMiniRecog extends AppCompatActivity implements EventListene
 
         params.put(SpeechConstant.ACCEPT_AUDIO_VOLUME, false);
         params.put(SpeechConstant.VAD, SpeechConstant.VAD_DNN);
-//        params.put(SpeechConstant.ACCEPT_AUDIO_DATA,true);
-//        params.put(SpeechConstant.OUT_FILE,Environment.getExternalStorageDirectory()+"/123.pcm");
-        params.put(SpeechConstant.IN_FILE,Environment.getExternalStorageDirectory()+"/1234.pcm");
-        if (enableOffline){
+        params.put(SpeechConstant.ACCEPT_AUDIO_DATA, true);
+//        params.put(SpeechConstant.IN_FILE,Environment.getExternalStorageDirectory()+"/123.pcm");
+        params.put(SpeechConstant.IN_FILE,"#com.example.myapplication.ActivityMiniRecog.getFileBytes()");
+        if (enableOffline) {
             params.put(SpeechConstant.DECODER, 2);
         }
-        //  params.put(SpeechConstant.NLU, "enable");
-        // params.put(SpeechConstant.VAD_ENDPOINT_TIMEOUT, 800);
-        // params.put(SpeechConstant.VAD, SpeechConstant.VAD_DNN);
-        //  params.put(SpeechConstant.PROP ,20000);
+        getFileBytes();
         String json = null; //可以替换成自己的json
         json = new JSONObject(params).toString(); // 这里可以替换成你需要测试的json
+//        asr.send(event, json, bytes, 0, length);
         asr.send(event, json, null, 0, 0);
         printLog("输入参数：" + json);
         Log.d(TAG, "start: ");
 //        startService(intent);
+    }
+
+    public static InputStream getFileBytes() {
+        int length = 0;
+        File file = new File(Environment.getExternalStorageDirectory() + "/12345.waw");
+        try {
+            FileInputStream in = new FileInputStream(file);
+            Log.d(TAG, "getFileBytes: 1");
+            return in;
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+            Log.d(TAG, "getFileBytes: 2");
+            return null;
+        }
+
     }
 
     private void stop() {
@@ -160,12 +179,12 @@ public class ActivityMiniRecog extends AppCompatActivity implements EventListene
             loadOfflineEngine(); //测试离线命令词请开启, 测试 ASR_OFFLINE_ENGINE_GRAMMER_FILE_PATH 参数时开启
         }
 
-        IntentFilter intentFilter= new IntentFilter();
+        IntentFilter intentFilter = new IntentFilter();
         intentFilter.addAction("android.intent.action.NEW_OUTGOING_CALL");
         intentFilter.addAction("android.intent.action.PHONE_STATE");
-        myBroadcast=new MyBroadcast();
-        registerReceiver(myBroadcast,intentFilter);
-        intent=new Intent(this,PhoneService.class);
+        myBroadcast = new MyBroadcast();
+        registerReceiver(myBroadcast, intentFilter);
+        intent = new Intent(this, PhoneService.class);
     }
 
     @Override
@@ -187,8 +206,8 @@ public class ActivityMiniRecog extends AppCompatActivity implements EventListene
         if (params != null && !params.isEmpty()) {
             logTxt += " ;params :" + params;
             try {
-                String str =new JSONObject(params).getString("best_result");
-                Log.d(TAG, "onEvent: "+str);
+                String str = new JSONObject(params).getString("best_result");
+                Log.d(TAG, "onEvent: " + str);
                 txtResult.setText(str);
             } catch (JSONException e) {
                 e.printStackTrace();
@@ -222,7 +241,7 @@ public class ActivityMiniRecog extends AppCompatActivity implements EventListene
         txtResult = (TextView) findViewById(R.id.txtResult);
         txtLog = (TextView) findViewById(R.id.txtLog);
         btn = (Button) findViewById(R.id.btn);
-        btn1 =(Button) findViewById(R.id.btn1);
+        btn1 = (Button) findViewById(R.id.btn1);
         stopBtn = (Button) findViewById(R.id.btn_stop);
         txtLog.setText(DESC_TEXT + "\n");
     }
@@ -240,7 +259,7 @@ public class ActivityMiniRecog extends AppCompatActivity implements EventListene
 
         ArrayList<String> toApplyList = new ArrayList<String>();
 
-        for (String perm :permissions){
+        for (String perm : permissions) {
             if (PackageManager.PERMISSION_GRANTED != ContextCompat.checkSelfPermission(this, perm)) {
                 toApplyList.add(perm);
                 //进入到这里代表没有权限.
@@ -248,7 +267,7 @@ public class ActivityMiniRecog extends AppCompatActivity implements EventListene
             }
         }
         String tmpList[] = new String[toApplyList.size()];
-        if (!toApplyList.isEmpty()){
+        if (!toApplyList.isEmpty()) {
             ActivityCompat.requestPermissions(this, toApplyList.toArray(tmpList), 123);
         }
 
@@ -258,20 +277,22 @@ public class ActivityMiniRecog extends AppCompatActivity implements EventListene
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
         // 此处为android 6.0以上动态授权的回调，用户自行实现。
     }
-    private boolean recog=true;
+
+    private boolean recog = true;
+
     //广播类
     class MyBroadcast extends BroadcastReceiver {
         public static final String ACTION = "com.example.myapplication.intent.action.MyBroadcast";
 
         @Override
         public void onReceive(Context context, Intent intent) {
-            Toast.makeText(MyApplication.getAppContext(),"电话Receiver",Toast.LENGTH_LONG).show();
-            if(recog){
-                recog=false;
+            Toast.makeText(MyApplication.getAppContext(), "电话Receiver", Toast.LENGTH_LONG).show();
+            if (recog) {
+                recog = false;
                 start();
 //                context.startService(new Intent(context, PhoneService.class));
-            }else {
-                recog=true;
+            } else {
+                recog = true;
                 stop();
 //                context.stopService(new Intent(context,PhoneService.class));
             }

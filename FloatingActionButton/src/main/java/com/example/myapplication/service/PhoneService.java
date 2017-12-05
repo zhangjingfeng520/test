@@ -44,7 +44,12 @@ public class PhoneService extends Service {
 //        startMediaRecorder();
 
         //AudioRecord
-        startRecord();
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                startRecord();
+            }
+        }).start();
 
         return super.onStartCommand(intent, flags, startId);
 
