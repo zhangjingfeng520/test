@@ -100,7 +100,7 @@ public class PhoneService extends Service {
             int bufferSize = AudioRecord.getMinBufferSize(frequency, channelConfiguration, audioEncoding);
             AudioRecord audioRecord = new AudioRecord(MediaRecorder.AudioSource.MIC, frequency, channelConfiguration, audioEncoding, bufferSize);
 
-            short[] buffer = new short[bufferSize];
+            byte[] buffer = new byte[bufferSize];
             audioRecord.startRecording();
             Log.i(TAG, "开始录音");
             stringBuilder.append("->读写音频流");
@@ -108,9 +108,8 @@ public class PhoneService extends Service {
             isRecording = true;
             while (isRecording) {
                 int bufferReadResult = audioRecord.read(buffer, 0, bufferSize);
-                for (int i = 0; i < bufferReadResult; i++) {
-                    dos.writeShort(buffer[i]);
-                }
+                    dos.write(buffer,0,bufferReadResult);
+
             }
             sendMsg("->录音线程已关闭\n录音文件为："+file.getName());
             audioRecord.stop();
