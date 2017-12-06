@@ -78,8 +78,7 @@
             android:name=".service.MonitorService"
             android:process=":push" />
         //录音
-        <service android:name=".service.PhoneService"
-            android:process=":push"/>
+        <service android:name=".service.PhoneService" />
 
         //开机receiver
         <receiver

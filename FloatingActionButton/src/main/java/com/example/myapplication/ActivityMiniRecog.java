@@ -6,6 +6,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.PackageManager;
+import android.media.AudioFormat;
+import android.media.AudioRecord;
+import android.media.MediaRecorder;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.v4.app.ActivityCompat;
@@ -27,6 +30,7 @@ import com.example.myapplication.service.PhoneService;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -101,11 +105,10 @@ public class ActivityMiniRecog extends AppCompatActivity implements EventListene
         params.put(SpeechConstant.VAD, SpeechConstant.VAD_DNN);
         params.put(SpeechConstant.ACCEPT_AUDIO_DATA, true);
 //        params.put(SpeechConstant.IN_FILE,Environment.getExternalStorageDirectory()+"/123.pcm");
-        params.put(SpeechConstant.IN_FILE,"#com.example.myapplication.ActivityMiniRecog.getFileBytes()");
+        params.put(SpeechConstant.IN_FILE, "#com.example.myapplication.ActivityMiniRecog.getFileBytes()");
         if (enableOffline) {
             params.put(SpeechConstant.DECODER, 2);
         }
-        getFileBytes();
         String json = null; //可以替换成自己的json
         json = new JSONObject(params).toString(); // 这里可以替换成你需要测试的json
 //        asr.send(event, json, bytes, 0, length);
@@ -117,7 +120,7 @@ public class ActivityMiniRecog extends AppCompatActivity implements EventListene
 
     public static InputStream getFileBytes() {
         int length = 0;
-        File file = new File(Environment.getExternalStorageDirectory() + "/12345.waw");
+        File file = new File(Environment.getExternalStorageDirectory() + "/16k.pcm");
         try {
             FileInputStream in = new FileInputStream(file);
             Log.d(TAG, "getFileBytes: 1");
@@ -130,7 +133,39 @@ public class ActivityMiniRecog extends AppCompatActivity implements EventListene
 
     }
 
-    private void stop() {
+    //16K采集率
+    public static int frequency = 16000;
+    //格式
+    public static int channelConfiguration = AudioFormat.CHANNEL_IN_MONO;
+    //16Bit
+    public static int audioEncoding = AudioFormat.ENCODING_PCM_16BIT;
+
+    private static int bufferSize = AudioRecord.getMinBufferSize(frequency, channelConfiguration, audioEncoding);
+
+    private static AudioRecord audioRecord = new AudioRecord(MediaRecorder.AudioSource.MIC, frequency, channelConfiguration, audioEncoding, bufferSize);
+
+    public static InputStream startRecord() {
+        Log.i(TAG, "开始录音");
+        byte[] buffer = new byte[bufferSize];
+        audioRecord.startRecording();
+        boolean isRecording = true;
+        audioRecord.read(buffer, 0, bufferSize);
+        ByteArrayInputStream in = new ByteArrayInputStream(buffer);
+        return in;
+
+    }
+
+    private void stop()
+    {
+        if(audioRecord!=null) {
+            if (audioRecord.getState() == AudioRecord.STATE_INITIALIZED) {
+                audioRecord.stop();
+            }
+            if (audioRecord != null) {
+                audioRecord.release();
+            }
+            Log.d(TAG, "stop: 释放audioRecord");
+        }
         asr.send(SpeechConstant.ASR_STOP, null, null, 0, 0);
         Log.d(TAG, "stop: ");//
 //        stopService(intent);
@@ -154,6 +189,7 @@ public class ActivityMiniRecog extends AppCompatActivity implements EventListene
         initView();
         initPermission();
         asr = EventManagerFactory.create(this, "asr");
+
         asr.registerListener(this); //  EventListener 中 onEvent方法
         btn.setOnClickListener(new View.OnClickListener() {
 
