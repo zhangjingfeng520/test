@@ -27,6 +27,8 @@ import com.example.myapplication.broadcast.StartActivityReceiver;
 import com.example.myapplication.service.MonitorService;
 import com.example.myapplication.service.PhoneService;
 import com.example.myapplication.service.TestService;
+import com.example.myapplication.utils.AudioPlayer;
+import com.example.myapplication.utils.AudioRecorder;
 
 import java.io.DataInputStream;
 import java.io.File;
@@ -34,7 +36,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-public class MyBroadcastActivity extends BaseActivity implements ServiceConnection {
+public class MyBroadcastActivity extends BaseActivity implements ServiceConnection,AudioRecorder.onRecorderListener{
     MyBroadcast myBroadcast;
     IntentFilter intentFilter;
     NotificationManager notificationManager;
@@ -76,15 +78,18 @@ public class MyBroadcastActivity extends BaseActivity implements ServiceConnecti
     private int bufferSize = AudioTrack.getMinBufferSize(frequency, channelConfiguration, audioEncoding);
     private AudioTrack track = new AudioTrack(AudioManager.STREAM_MUSIC, 16000, AudioFormat.CHANNEL_OUT_MONO,
             audioEncoding, bufferSize, AudioTrack.MODE_STREAM);
-    private boolean playing=false;
+    private boolean playing = false;
     private DataInputStream in = null;
 
     private void sendMsg(String str) {
-        Message msg=new Message();
-        msg.what= FLAG;
-        msg.obj=str+"\n";
+        Message msg = new Message();
+        msg.what = FLAG;
+        msg.obj = str + "\n";
         handler.sendMessage(msg);
     }
+    //边录边播
+    private AudioRecorder recorder;
+    private AudioPlayer player;
 
     @Override
     public void initView() {
@@ -99,6 +104,24 @@ public class MyBroadcastActivity extends BaseActivity implements ServiceConnecti
 
             }
         };
+        //边录边播
+        findViewById(R.id.recorder_player_btn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                player = new AudioPlayer();         // 创建播放器对象
+                recorder = new AudioRecorder(MyBroadcastActivity.this); // 创建录音对象
+                recorder.start();
+            }
+        });
+        //停止
+        findViewById(R.id.stop_btn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                recorder.stop();    // 停止录音
+                player.stop();      // 停止播放
+            }
+        });
+        //录音
         findViewById(R.id.play_service_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -108,16 +131,16 @@ public class MyBroadcastActivity extends BaseActivity implements ServiceConnecti
                     public void run() {
                         File file = new File(Environment.getExternalStorageDirectory() + "/1234.pcm");
                         byte[] bytes = new byte[bufferSize];
-                        int readCount=0;
+                        int readCount = 0;
                         try {
                             in = new DataInputStream(new FileInputStream(file));
                         } catch (FileNotFoundException e) {
                             e.printStackTrace();
                         }
-                        sendMsg("文件名: "+file.getName()+"\n文件大小: "+bytes.length);
+                        sendMsg("文件名: " + file.getName() + "\n文件大小: " + bytes.length);
                         try {
-                            while (in.available()>0) {
-                                readCount=in.read(bytes);
+                            while (in.available() > 0) {
+                                readCount = in.read(bytes);
                                 if (readCount == AudioTrack.ERROR_INVALID_OPERATION || readCount == AudioTrack.ERROR_BAD_VALUE) {
                                     continue;
                                 }
@@ -127,15 +150,14 @@ public class MyBroadcastActivity extends BaseActivity implements ServiceConnecti
                                 }
                             }
                             sendMsg("播放完毕\n");
-                        }
-                         catch (IOException e) {
+                        } catch (IOException e) {
                             e.printStackTrace();
                         }
                     }
                 }).start();
             }
         });
-
+        //停止播放录音
         findViewById(R.id.stop_play_button).
                 setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -149,7 +171,7 @@ public class MyBroadcastActivity extends BaseActivity implements ServiceConnecti
 //                                track.release();
                             }
                         }
-                        if(in!=null){
+                        if (in != null) {
                             try {
                                 in.close();
                             } catch (IOException e) {
@@ -288,7 +310,17 @@ public class MyBroadcastActivity extends BaseActivity implements ServiceConnecti
     public void onServiceDisconnected(ComponentName componentName) {
         Log.d("TestService", "onServiceDisconnected: ");
     }
-    boolean isRecog=false;
+
+    boolean isRecog = false;
+
+    @Override
+    public void handleRecordData(byte[] recordData, int offset, int size) {
+        // 将录音捕捉的音频数据写入到播放器中播放
+        if (player != null) {
+            player.play(recordData, offset, size);
+        }
+    }
+
     //广播类
     class MyBroadcast extends BroadcastReceiver {
         public static final String ACTION = "com.example.myapplication.intent.action.MyBroadcast";
@@ -297,12 +329,12 @@ public class MyBroadcastActivity extends BaseActivity implements ServiceConnecti
         @Override
         public void onReceive(Context context, Intent intent) {
             Log.d(TAG, intent.getAction());
-            if(!isRecog){
-            context.startService(servicePhoneIntent);
-                isRecog=true;
-            }else {
+            if (!isRecog) {
+                context.startService(servicePhoneIntent);
+                isRecog = true;
+            } else {
                 context.stopService(servicePhoneIntent);
-                isRecog=false;
+                isRecog = false;
             }
         }
 //            ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);

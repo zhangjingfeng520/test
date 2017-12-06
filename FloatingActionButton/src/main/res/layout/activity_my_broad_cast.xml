@@ -6,101 +6,126 @@
     android:orientation="vertical"
     tools:context="com.example.myapplication.MyBroadcastActivity">
 
-    <include layout="@layout/toolbar"/>
+    <include layout="@layout/toolbar" />
+
     <Button
         android:id="@+id/broadcast_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="发起广播"
-        />
+        android:text="发起广播" />
 
     <Button
         android:id="@+id/notification_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="发起通知"
-        />
+        android:text="发起通知" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
+
         <Button
             android:id="@+id/start_service_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="开始录音"
-            />
+            android:text="开始录音" />
+
         <Button
             android:id="@+id/stop_service_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="结束录音"
-            />
+            android:text="结束录音" />
+
         <Button
             android:id="@+id/play_service_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="播放录音"/>
+            android:text="播放录音" />
+
         <Button
             android:id="@+id/stop_play_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="停止播放"/>
+            android:text="停止播放" />
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
+
         <Button
             android:id="@+id/start_monitor_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="启动service保活"
-            />
+            android:text="启动service保活" />
+
         <Button
             android:id="@+id/stop_monitor_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="停止service保活"
-            />
+            android:text="停止service保活" />
     </LinearLayout>
 
     <Button
         android:id="@+id/bind_service_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="绑定service"
-        />
+        android:text="绑定service" />
+
     <Button
         android:id="@+id/Unbind_service_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="解除绑定service"
-        />
-    <Button
-        android:id="@+id/show_number_button"
-        android:layout_width="wrap_content"
+        android:text="解除绑定service" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="i"
-        />
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/show_number_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="i" />
+
+        <Button
+            android:id="@+id/recorder_player_btn"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="边录边播" />
+
+        <Button
+            android:id="@+id/stop_btn"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="停止" />
+    </LinearLayout>
+
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@color/hui"
-        />
+        android:background="@color/hui" />
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="log日志:"/>
+        android:text="log日志:" />
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_weight="1">
+
         <TextView
             android:id="@+id/log_tv"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text=""/>
+            android:text="" />
     </ScrollView>
 
 
