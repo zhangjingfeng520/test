@@ -6,8 +6,8 @@
         android:icon="@mipmap/ic_launcher"
         android:title="Item" />
     <item
-        android:id="@+id/navItem2"
+        android:id="@+id/setting"
         android:icon="@mipmap/ic_launcher_round"
-        android:title="Item" />
+        android:title="设置" />
 
 </menu>

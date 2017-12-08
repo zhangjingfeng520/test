@@ -18,22 +18,23 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.baidu.speech.EventListener;
 import com.baidu.speech.EventManager;
 import com.baidu.speech.EventManagerFactory;
 import com.baidu.speech.asr.SpeechConstant;
-import com.example.myapplication.base.MyApplication;
 import com.example.myapplication.service.PhoneService;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.ByteArrayInputStream;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -46,7 +47,7 @@ import java.util.Map;
 public class ActivityMiniRecog extends AppCompatActivity implements EventListener {
     protected TextView txtLog;
     protected TextView txtResult;
-    protected Button btn;
+    protected Button btn,btn2;
     protected Button stopBtn;
     protected Button btn1;
     private static String DESC_TEXT = "精简版识别，带有SDK唤醒运行的最少代码，仅仅展示如何调用，\n" +
@@ -59,24 +60,30 @@ public class ActivityMiniRecog extends AppCompatActivity implements EventListene
 
     private boolean logTime = true;
 
-    private boolean enableOffline = true; // 测试离线命令词，需要改成true
+    private boolean enableOffline = false; // 测试离线命令词，需要改成true
     private MyBroadcast myBroadcast;
     private static final String TAG = "ActivityMiniRecog";
-    private Intent intent;
+    private Intent intent1;
 
     /**
      * 测试参数填在这里
      */
     private void start() {
+        if(asr!=null){
+            stop();
+        }
         txtLog.setText("");
         Map<String, Object> params = new LinkedHashMap<String, Object>();
         String event = null;
         event = SpeechConstant.ASR_START; // 替换成测试的event
-
+        params.put(SpeechConstant.DISABLE_PUNCTUATION, false);
         params.put(SpeechConstant.ACCEPT_AUDIO_VOLUME, false);
         params.put(SpeechConstant.VAD, SpeechConstant.VAD_DNN);
-        params.put(SpeechConstant.ACCEPT_AUDIO_DATA, true);
-        params.put(SpeechConstant.OUT_FILE, Environment.getExternalStorageDirectory() + "/123.pcm");
+        params.put(SpeechConstant.ACCEPT_AUDIO_DATA, false);
+        params.put(SpeechConstant.VAD_ENDPOINT_TIMEOUT,0);//长语音，无静音短句.
+        params.put(SpeechConstant.PID,19361);//模型
+
+//        params.put(SpeechConstant.OUT_FILE, Environment.getExternalStorageDirectory() + "/123.pcm");
         if (enableOffline) {
             params.put(SpeechConstant.DECODER, 2);
         }
@@ -96,14 +103,19 @@ public class ActivityMiniRecog extends AppCompatActivity implements EventListene
      * 测试参数填在这里
      */
     private void start1() {
+        if(asr!=null){
+            stop();
+        }
         txtLog.setText("");
         Map<String, Object> params = new LinkedHashMap<String, Object>();
         String event = null;
         event = SpeechConstant.ASR_START; // 替换成测试的event
-
+        params.put(SpeechConstant.DISABLE_PUNCTUATION, false);
         params.put(SpeechConstant.ACCEPT_AUDIO_VOLUME, false);
         params.put(SpeechConstant.VAD, SpeechConstant.VAD_DNN);
-        params.put(SpeechConstant.ACCEPT_AUDIO_DATA, true);
+        params.put(SpeechConstant.ACCEPT_AUDIO_DATA, false);
+        params.put(SpeechConstant.VAD_ENDPOINT_TIMEOUT,0);
+        params.put(SpeechConstant.PID,19361);//模型
 //        params.put(SpeechConstant.IN_FILE,Environment.getExternalStorageDirectory()+"/123.pcm");
         params.put(SpeechConstant.IN_FILE, "#com.example.myapplication.ActivityMiniRecog.getFileBytes()");
         if (enableOffline) {
@@ -118,13 +130,14 @@ public class ActivityMiniRecog extends AppCompatActivity implements EventListene
 //        startService(intent);
     }
 
+    private static DataInputStream din=null;
     public static InputStream getFileBytes() {
         int length = 0;
-        File file = new File(Environment.getExternalStorageDirectory() + "/16k.pcm");
+        File file = new File(Environment.getExternalStorageDirectory() + "/12345.pcm");
         try {
-            FileInputStream in = new FileInputStream(file);
+            din=new DataInputStream(new FileInputStream(file));
             Log.d(TAG, "getFileBytes: 1");
-            return in;
+            return din;
         } catch (FileNotFoundException e) {
             e.printStackTrace();
             Log.d(TAG, "getFileBytes: 2");
@@ -144,31 +157,89 @@ public class ActivityMiniRecog extends AppCompatActivity implements EventListene
 
     private static AudioRecord audioRecord = new AudioRecord(MediaRecorder.AudioSource.MIC, frequency, channelConfiguration, audioEncoding, bufferSize);
 
-    public static InputStream startRecord() {
+    boolean isRecording = false;
+    DataOutputStream dos = null;
+
+    public void  startRecord() {
+        isRecording=true;
+        File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath(),"12345.pcm");
+        Log.i(TAG, "生成文件");
+        //如果存在，就先删除再创建
+        if (file.exists()) {
+            file.delete();
+            Log.i(TAG, "删除文件");
+        }
+        try {
+            file.createNewFile();
+            Log.i(TAG, "创建文件");
+        } catch (IOException e) {
+            e.printStackTrace();
+            Log.i(TAG, "创建文件失败");
+        }
+        try {
+            dos = new DataOutputStream(new FileOutputStream(file));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
         Log.i(TAG, "开始录音");
         byte[] buffer = new byte[bufferSize];
         audioRecord.startRecording();
-        boolean isRecording = true;
-        audioRecord.read(buffer, 0, bufferSize);
-        ByteArrayInputStream in = new ByteArrayInputStream(buffer);
-        return in;
+        while (isRecording) {
+            int bufferReadResult = audioRecord.read(buffer, 0, bufferSize);
+            try {
+                dos.write(buffer,0,bufferReadResult);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        audioRecord.stop();
+        try {
+            dos.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Log.d(TAG, "onStop: 11");
 
     }
 
     private void stop()
     {
-        if(audioRecord!=null) {
-            if (audioRecord.getState() == AudioRecord.STATE_INITIALIZED) {
-                audioRecord.stop();
-            }
-            if (audioRecord != null) {
-                audioRecord.release();
-            }
-            Log.d(TAG, "stop: 释放audioRecord");
-        }
+        isRecording=false;
+
+//        if(audioRecord!=null) {
+//            if (audioRecord.getState() == AudioRecord.STATE_INITIALIZED) {
+//                audioRecord.stop();
+//            }
+//            if (audioRecord != null) {
+//                audioRecord.release();
+//            }
+//            Log.d(TAG, "stop: 释放audioRecord");
+//        }
+
         asr.send(SpeechConstant.ASR_STOP, null, null, 0, 0);
         Log.d(TAG, "stop: ");//
+        if (din!=null){
+            try {
+                din.close();
+                din=null;
+                cancel();
+                Log.d(TAG, "stop: 释放din");
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
 //        stopService(intent);
+    }
+    /**
+     * 取消本次识别，取消后将立即停止不会返回识别结果。
+     * cancel 与stop的区别是 cancel在stop的基础上，完全停止整个识别流程，
+     */
+    public void cancel() {
+        if (asr != null){
+            Log.d(TAG, "cancel: 取消识别");
+            asr.send(SpeechConstant.ASR_CANCEL, "{}", null, 0, 0);
+        }
     }
 
     private void loadOfflineEngine() {
@@ -198,6 +269,27 @@ public class ActivityMiniRecog extends AppCompatActivity implements EventListene
                 start();
             }
         });
+        btn2.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+//                start();
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        startRecord();
+                    }
+                }).start();
+                try {
+                    Thread.sleep(5000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                    start1();
+
+
+            }
+        });
         stopBtn.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -220,7 +312,7 @@ public class ActivityMiniRecog extends AppCompatActivity implements EventListene
         intentFilter.addAction("android.intent.action.PHONE_STATE");
         myBroadcast = new MyBroadcast();
         registerReceiver(myBroadcast, intentFilter);
-        intent = new Intent(this, PhoneService.class);
+        intent1 = new Intent(this, PhoneService.class);
     }
 
     @Override
@@ -244,6 +336,7 @@ public class ActivityMiniRecog extends AppCompatActivity implements EventListene
             try {
                 String str = new JSONObject(params).getString("best_result");
                 Log.d(TAG, "onEvent: " + str);
+                if(str!=null&!str.isEmpty())
                 txtResult.setText(str);
             } catch (JSONException e) {
                 e.printStackTrace();
@@ -278,6 +371,7 @@ public class ActivityMiniRecog extends AppCompatActivity implements EventListene
         txtLog = (TextView) findViewById(R.id.txtLog);
         btn = (Button) findViewById(R.id.btn);
         btn1 = (Button) findViewById(R.id.btn1);
+        btn2 = (Button) findViewById(R.id.btn2);
         stopBtn = (Button) findViewById(R.id.btn_stop);
         txtLog.setText(DESC_TEXT + "\n");
     }
@@ -322,15 +416,15 @@ public class ActivityMiniRecog extends AppCompatActivity implements EventListene
 
         @Override
         public void onReceive(Context context, Intent intent) {
-            Toast.makeText(MyApplication.getAppContext(), "电话Receiver", Toast.LENGTH_LONG).show();
+            Log.d(TAG, intent.getAction());
             if (recog) {
                 recog = false;
-                start();
-//                context.startService(new Intent(context, PhoneService.class));
+//                context.startService(intent1);
+//                start1();
             } else {
                 recog = true;
-                stop();
-//                context.stopService(new Intent(context,PhoneService.class));
+//                context.stopService(intent1);
+//                stop();
             }
         }
     }

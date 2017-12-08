@@ -16,4 +16,15 @@
     </string>
     <string name="expanded">fangda</string>
     <string name="collapsed">suoxiao</string>
+    <string name="title_activity_settings">Settings</string>
+    //设置
+    <string-array name="city_array">
+        <item>北京</item>
+        <item>贵州</item>
+        <item>湖南</item>
+        <item>江西</item>
+    </string-array>
+
+
+
 </resources>

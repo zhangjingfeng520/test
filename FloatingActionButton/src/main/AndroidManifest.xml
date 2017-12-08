@@ -19,7 +19,7 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <!-- 写入扩展存储，向扩展卡写入数据，用于写入离线定位数据 -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <!-- 访问网络，网络定位需要上网 -->
     <uses-permission android:name="android.permission.INTERNET" />
@@ -36,8 +36,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-
-    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
 
     <application
         android:name=".base.MyApplication"
@@ -50,7 +49,6 @@
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
             android:value="kIfWAEUylfTcs4pfDAchxxDugdzCYGjI" />
-
         <meta-data
             android:name="com.baidu.speech.APP_ID"
             android:value="10473876" />
@@ -60,10 +58,10 @@
         <meta-data
             android:name="com.baidu.speech.SECRET_KEY"
             android:value="Qw64R7AGFZa77UiD4DaOMGnBFGAUhW6c" />
+
         <service
             android:name="com.baidu.speech.VoiceRecognitionService"
             android:exported="false" />
-
         //定位
         <service
             android:name="com.baidu.location.f"
@@ -79,7 +77,6 @@
             android:process=":push" />
         //录音
         <service android:name=".service.PhoneService" />
-
         //开机receiver
         <receiver
             android:name=".broadcast.BootCompleteReceiver"
@@ -129,18 +126,23 @@
             android:exported="true"
             android:launchMode="singleTop" />
         <activity android:name=".DialerActivity" />
-        <activity android:name=".DataStorageActivity"></activity>
+        <activity android:name=".DataStorageActivity" />
         <activity
             android:name=".ActivityMiniRecog"
             android:configChanges="orientation|keyboardHidden|screenLayout"
             android:label="精简版识别"
-            android:theme="@style/MsgAppTheme"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:theme="@style/MsgAppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="com.baidu.speech.recognizerdemo.intent.category.SAMPLE_CODE" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".SettingsActivity"
+            android:label="设置"
+            android:theme="@style/MsgAppTheme"></activity>
     </application>
 
 </manifest>

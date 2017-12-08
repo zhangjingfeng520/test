@@ -129,7 +129,7 @@ public class MyBroadcastActivity extends BaseActivity implements ServiceConnecti
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
-                        File file = new File(Environment.getExternalStorageDirectory() + "/1234.pcm");
+                        File file = new File(Environment.getExternalStorageDirectory() + "/12345.pcm");
                         byte[] bytes = new byte[bufferSize];
                         int readCount = 0;
                         try {

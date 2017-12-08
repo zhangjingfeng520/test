@@ -46,6 +46,13 @@
         android:onClick="onClick"
         android:text="开始" />
     <Button
+        android:id="@+id/btn2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:onClick="onClick"
+        android:text="录音 五秒 后解析(12345.pcm)" />
+    <Button
         android:id="@+id/btn1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

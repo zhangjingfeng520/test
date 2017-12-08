@@ -48,32 +48,7 @@ public class PhoneService extends Service {
 //        startMediaRecorder();
 
         //AudioRecord
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                startRecord();
-            }
-        }).start();
-
-        return super.onStartCommand(intent, flags, startId);
-
-    }
-
-    private boolean isRecording = false;
-
-    //AudioRecord
-    public void startRecord() {
-        StringBuilder stringBuilder=new StringBuilder();
-        Log.i(TAG, "-------------------\n开始录音");
-        stringBuilder.append("-------------------\n开始录音");
-        //16K采集率
-        int frequency = 16000;
-        //格式
-        int channelConfiguration = AudioFormat.CHANNEL_IN_MONO;
-        //16Bit
-        int audioEncoding = AudioFormat.ENCODING_PCM_16BIT;
-        //生成PCM文件
-        file = new File(Environment.getExternalStorageDirectory().getAbsolutePath(),"1234.pcm");
+        file = new File(Environment.getExternalStorageDirectory().getAbsolutePath(),"12345.pcm");
         Log.i(TAG, "生成文件");
         stringBuilder.append("->生成文件");
         //如果存在，就先删除再创建
@@ -91,12 +66,37 @@ public class PhoneService extends Service {
             Log.i(TAG, "创建文件失败");
             stringBuilder.append("->创建文件失败");
         }
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                startRecord();
+            }
+        }).start();
+
+        return super.onStartCommand(intent, flags, startId);
+
+    }
+
+    private boolean isRecording = false;
+    private StringBuilder stringBuilder=new StringBuilder();
+    //AudioRecord
+    public void startRecord() {
+        Log.i(TAG, "-------------------\n开始录音");
+        stringBuilder.append("-------------------\n开始录音");
+        //16K采集率
+        int frequency = 16000;
+        //格式
+        int channelConfiguration = AudioFormat.CHANNEL_IN_MONO;
+        //16Bit
+        int audioEncoding = AudioFormat.ENCODING_PCM_16BIT;
+        //生成PCM文件
+
 
         try {
             //输出流
             OutputStream os = new FileOutputStream(file);
             BufferedOutputStream bos = new BufferedOutputStream(os);
-            DataOutputStream dos = new DataOutputStream(bos);
+            DataOutputStream dos = new DataOutputStream(os);
             int bufferSize = AudioRecord.getMinBufferSize(frequency, channelConfiguration, audioEncoding);
             AudioRecord audioRecord = new AudioRecord(MediaRecorder.AudioSource.MIC, frequency, channelConfiguration, audioEncoding, bufferSize);
 

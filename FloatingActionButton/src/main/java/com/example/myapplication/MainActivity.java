@@ -407,7 +407,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (drawerToggle.onOptionsItemSelected(item))//左侧按钮打开抽屉
-            return true;
+             return true;
+        switch(item.getItemId()){
+            case R.id.setting:
+                startActivity(new Intent(MainActivity.this,SettingsActivity.class));
+                break;
+        }
 
         return super.onOptionsItemSelected(item);
     }
