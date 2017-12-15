@@ -193,7 +193,7 @@ public class ContactsActivity extends BaseActivity implements SearchView.OnQuery
                 ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME,
                 ContactsContract.CommonDataKinds.Phone.NUMBER};
 
-        String selection = ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME + "=?"
+        String selection = ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME+ "=?"
                 + " AND " + ContactsContract.CommonDataKinds.Phone.TYPE + "='" +
                 ContactsContract.CommonDataKinds.Phone.TYPE_MOBILE + "'";
 

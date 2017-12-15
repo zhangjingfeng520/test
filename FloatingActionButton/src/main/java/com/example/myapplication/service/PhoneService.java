@@ -150,6 +150,7 @@ public class PhoneService extends Service {
         Log.d(TAG, "onDestroy: ");
         sendMsg("->service已销毁 "+new SimpleDateFormat("hh:mm:ss").format(new Date()));
         super.onDestroy();
+        
     }
 
     private void onStop() {

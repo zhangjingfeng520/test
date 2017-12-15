@@ -92,13 +92,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void initData() {
         myMapList = new ArrayList<MyMap>();
         myMapList.add(new MyMap("登陆提示框", "0"));
-        myMapList.add(new MyMap("打开百度", "1"));
+        myMapList.add(new MyMap("分组list", "1"));
         myMapList.add(new MyMap("拨打", "2"));
         myMapList.add(new MyMap("TEST", "3"));
         myMapList.add(new MyMap("百度地图", "4"));
         myMapList.add(new MyMap("消息气泡", "5"));
-        myMapList.add(new MyMap("刷新1", "6"));
-        myMapList.add(new MyMap("刷新2", "7"));
+        myMapList.add(new MyMap("list刷新", "6"));
+        myMapList.add(new MyMap("recycler刷新", "7"));
         myMapList.add(new MyMap("文件选择器", "8"));
         myMapList.add(new MyMap("网络请求", "9"));
         myMapList.add(new MyMap("图表", "10"));
@@ -143,8 +143,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         showLoginDialog();
                         break;
                     case 1:
-                        intent.setAction(Intent.ACTION_VIEW);
-                        intent.setData(Uri.parse("http://www.baidu.com"));
+//                        intent.setAction(Intent.ACTION_VIEW);
+//                        intent.setData(Uri.parse("http://www.baidu.com"));
+//                        startActivity(intent);
+                        intent.setClass(MainActivity.this,ThreeLevelMenuActivity.class);
                         startActivity(intent);
                         break;
                     case 2:

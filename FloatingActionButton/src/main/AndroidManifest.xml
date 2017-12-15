@@ -142,7 +142,8 @@
         <activity
             android:name=".SettingsActivity"
             android:label="设置"
-            android:theme="@style/MsgAppTheme"></activity>
+            android:theme="@style/MsgAppTheme" />
+        <activity android:name=".ThreeLevelMenuActivity"></activity>
     </application>
 
 </manifest>
