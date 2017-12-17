@@ -32,7 +32,8 @@ public class ThreeLevelMenuActivity extends BaseActivity {
         getData();
         expandableListView = (ExpandableListView) findViewById(R.id.three_level_menu);
         expandableListView.setAdapter(new ThreeLevelMenuAdapter(colleges, this));
-        Log.d(TAG, "initView: "+colleges.toString());
+        //去除默认指示器
+        expandableListView.setGroupIndicator(null);
 
     }
 
@@ -40,32 +41,34 @@ public class ThreeLevelMenuActivity extends BaseActivity {
      * 初始化数据
      */
     private void getData() {
+        String[] strings=new String[]{"家人","朋友","好友","公司","同学"};
+        colleges = new ArrayList<>();
+        for(int j=0;j<5;j++) {
 
-        College college = new College();
+            College college = new College();
 
-        college.name = "科技大学";
+            college.name = strings[j];
 
-        List<Classes> classesList = new ArrayList<>();
+            List<Classes> classesList = new ArrayList<>();
 
-        for (int i = 1; i < 3; i++) {
-            Classes classes = new Classes();
+            for (int i = 1; i < 3; i++) {
+                Classes classes = new Classes();
 
-            classes.name = "计算机" + i + "班";
+                classes.name = j+"计算机" + i + "班";
 
-            List<String> list = new ArrayList<>();
+                List<String> list = new ArrayList<>();
 
-            list.add("mm");
-            list.add("dd");
-            classes.students = list;
+                list.add("mm");
+                list.add("dd");
+                classes.students = list;
 
-            classesList.add(classes);
+                classesList.add(classes);
+            }
+
+            college.classList = classesList;
+            colleges.add(college);
         }
 
-        college.classList = classesList;
-
-
-        colleges = new ArrayList<>();
-        colleges.add(college);
     }
 
 }

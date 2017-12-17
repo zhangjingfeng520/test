@@ -11,5 +11,6 @@
     <ExpandableListView
         android:id="@+id/three_level_menu"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"></ExpandableListView>
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"></ExpandableListView>
 </LinearLayout>

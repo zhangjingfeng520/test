@@ -5,15 +5,20 @@ import android.content.Context;
 import android.graphics.Color;
 import android.os.Build;
 import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.BaseExpandableListAdapter;
 import android.widget.ExpandableListView;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.myapplication.R;
 import com.example.myapplication.bean.College;
 import com.example.myapplication.view.CustomExpandableListView;
+
+import org.w3c.dom.Text;
 
 import java.util.List;
 
@@ -32,7 +37,7 @@ public class ThreeLevelMenuAdapter extends BaseExpandableListAdapter {
 
     @Override
     public int getGroupCount() {
-        return colleges==null?0:colleges.size();
+        return colleges == null ? 0 : colleges.size();
     }
 
     @Override
@@ -67,7 +72,23 @@ public class ThreeLevelMenuAdapter extends BaseExpandableListAdapter {
 
     @Override
     public View getGroupView(int i, boolean b, View view, ViewGroup viewGroup) {
-        return getGenericView(colleges.get(i).name);
+        GroupViewHolder groupViewHolder;
+        if (view == null) {
+            groupViewHolder = new GroupViewHolder();
+            view = LayoutInflater.from(context).inflate(R.layout.group_view_layout, viewGroup, false);
+            groupViewHolder.group_tv = (TextView) view.findViewById(R.id.group_tv);
+            groupViewHolder.group_img = (ImageView) view.findViewById(R.id.group_img);
+            view.setTag(groupViewHolder);
+        } else {
+            groupViewHolder = (GroupViewHolder) view.getTag();
+        }
+        groupViewHolder.group_tv.setText(colleges.get(i).name);
+        if (b) {
+            groupViewHolder.group_img.setImageResource(R.mipmap.ic_collpase);
+        } else
+            groupViewHolder.group_img.setImageResource(R.mipmap.ic_expand);
+        return view;
+//        return getGenericView(colleges.get(i).name);
     }
 
     @Override
@@ -79,6 +100,7 @@ public class ThreeLevelMenuAdapter extends BaseExpandableListAdapter {
     public boolean isChildSelectable(int i, int i1) {
         return true;
     }
+
     private TextView getGenericView(String string) {
         AbsListView.LayoutParams layoutParams = new AbsListView.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,
@@ -89,20 +111,21 @@ public class ThreeLevelMenuAdapter extends BaseExpandableListAdapter {
 
         textView.setGravity(Gravity.CENTER_VERTICAL | Gravity.LEFT);
 
-        textView.setPadding(40, 20, 0, 20);
+        textView.setPadding(100, 20, 0, 20);
         textView.setText(string);
-        textView.setTextColor(Color.RED);
+//        textView.setTextColor(Color.RED);
         return textView;
     }
 
 
     /**
-     *  返回子ExpandableListView 的对象  此时传入的是该大学下所有班级的集合。
+     * 返回子ExpandableListView 的对象  此时传入的是该大学下所有班级的集合。
+     *
      * @param college
      * @return
      */
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
-    public ExpandableListView getGenericExpandableListView(College college){
+    public ExpandableListView getGenericExpandableListView(College college) {
         AbsListView.LayoutParams layoutParams = new AbsListView.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.WRAP_CONTENT);
@@ -110,11 +133,20 @@ public class ThreeLevelMenuAdapter extends BaseExpandableListAdapter {
         CustomExpandableListView view = new CustomExpandableListView(context);
 
         // 加载班级的适配器
-        ThreeLevelMenuSonAdapter adapter = new ThreeLevelMenuSonAdapter(college.classList,context);
+        ThreeLevelMenuSonAdapter adapter = new ThreeLevelMenuSonAdapter(college.classList, context);
 
         view.setAdapter(adapter);
 
-        view.setPadding(20,0,0,0);
+        view.setPadding(20, 0, 0, 0);
         return view;
+    }
+
+    static class GroupViewHolder {
+        TextView group_tv;
+        ImageView group_img;
+    }
+
+    static class ChildViewHolder {
+        TextView child_tv;
     }
 }

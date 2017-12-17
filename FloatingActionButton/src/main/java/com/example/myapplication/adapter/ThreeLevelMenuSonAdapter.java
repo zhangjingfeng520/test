@@ -8,7 +8,9 @@ import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.BaseExpandableListAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.myapplication.R;
 import com.example.myapplication.bean.Classes;
 
 import java.util.List;
@@ -74,7 +76,7 @@ public class ThreeLevelMenuSonAdapter extends BaseExpandableListAdapter {
     @Override
     public View getChildView(int groupPosition, int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
 
-        return getGenericView(classes.get(groupPosition).students.get(childPosition));
+        return getGenericView1(classes.get(groupPosition).students.get(childPosition));
     }
 
     @Override
@@ -91,7 +93,7 @@ public class ThreeLevelMenuSonAdapter extends BaseExpandableListAdapter {
      * @param string
      * @return
      */
-    private TextView getGenericView(String string) {
+    private TextView getGenericView(final String string) {
 
         AbsListView.LayoutParams layoutParams = new AbsListView.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,
@@ -102,9 +104,31 @@ public class ThreeLevelMenuSonAdapter extends BaseExpandableListAdapter {
 
         textView.setGravity(Gravity.CENTER_VERTICAL | Gravity.LEFT);
 
-        textView.setPadding(40, 20, 0, 20);
+        textView.setPadding(100, 20, 0, 20);
         textView.setText(string);
-        textView.setTextColor(Color.RED);
+//        textView.setTextColor(Color.RED);
+        return textView;
+    }
+    private TextView getGenericView1(final String string) {
+
+        AbsListView.LayoutParams layoutParams = new AbsListView.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT);
+
+        TextView textView = new TextView(context);
+        textView.setLayoutParams(layoutParams);
+
+        textView.setGravity(Gravity.CENTER_VERTICAL | Gravity.LEFT);
+
+        textView.setPadding(100, 20, 0, 20);
+        textView.setText(string);
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(context,""+string,Toast.LENGTH_LONG).show();
+            }
+        });
+//        textView.setTextColor(Color.RED);
         return textView;
     }
 }
