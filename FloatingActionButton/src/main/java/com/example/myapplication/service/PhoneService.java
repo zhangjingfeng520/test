@@ -95,7 +95,6 @@ public class PhoneService extends Service {
         try {
             //输出流
             OutputStream os = new FileOutputStream(file);
-            BufferedOutputStream bos = new BufferedOutputStream(os);
             DataOutputStream dos = new DataOutputStream(os);
             int bufferSize = AudioRecord.getMinBufferSize(frequency, channelConfiguration, audioEncoding);
             AudioRecord audioRecord = new AudioRecord(MediaRecorder.AudioSource.MIC, frequency, channelConfiguration, audioEncoding, bufferSize);
