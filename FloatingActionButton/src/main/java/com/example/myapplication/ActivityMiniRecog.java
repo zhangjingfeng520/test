@@ -285,7 +285,8 @@ public class ActivityMiniRecog extends AppCompatActivity implements EventListene
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                    start1();
+                isRecording=false;
+                start1();
 
 
             }
@@ -323,6 +324,8 @@ public class ActivityMiniRecog extends AppCompatActivity implements EventListene
             unloadOfflineEngine(); //测试离线命令词请开启, 测试 ASR_OFFLINE_ENGINE_GRAMMER_FILE_PATH 参数时开启
         }
         unregisterReceiver(myBroadcast);
+        asr.unregisterListener(this);
+        asr=null;
     }
 
     //   EventListener  回调方法

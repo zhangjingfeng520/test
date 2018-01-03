@@ -50,6 +50,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.myapplication.adapter.MyMapAdapter;
+import com.example.myapplication.baiduyuyin.ActivityWakeUpRecog;
 import com.example.myapplication.bean.MyMap;
 import com.example.myapplication.view.ClearEditText;
 import com.leon.lfilepickerlibrary.LFilePicker;
@@ -107,6 +108,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         myMapList.add(new MyMap("拨号盘", "13"));
         myMapList.add(new MyMap("数据存储", "14"));
         myMapList.add(new MyMap("语音识别", "15"));
+        myMapList.add(new MyMap("语音唤醒", "16"));
+        myMapList.add(new MyMap("唤醒后识别", "17"));
 
     }
 
@@ -216,6 +219,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     case 15:
                         intent.setClass(MainActivity.this,ActivityMiniRecog.class);
                         startActivity(intent);
+                        break;
+                    case 16:
+                        intent.setClass(MainActivity.this,ActivityMiniWakeUp.class);
+                        startActivity(intent);
+                        break;
+                    case 17:
+                        intent.setClass(MainActivity.this,ActivityWakeUpRecog.class);
+                        startActivity(intent);
+                        break;
                     default:
                         break;
                 }

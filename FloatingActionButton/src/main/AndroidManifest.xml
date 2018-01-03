@@ -127,6 +127,20 @@
             android:launchMode="singleTop" />
         <activity android:name=".DialerActivity" />
         <activity android:name=".DataStorageActivity" />
+
+        <!--语音唤醒-->
+        <activity
+            android:name=".ActivityMiniWakeUp"
+            android:configChanges="orientation|keyboardHidden|screenLayout"
+            android:label="精简版唤醒词"
+            android:screenOrientation="portrait"
+            android:theme="@style/MsgAppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.baidu.speech.recognizerdemo.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <!--语音识别-->
         <activity
             android:name=".ActivityMiniRecog"
             android:configChanges="orientation|keyboardHidden|screenLayout"
@@ -135,14 +149,27 @@
             android:theme="@style/MsgAppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="com.baidu.speech.recognizerdemo.intent.category.SAMPLE_CODE" />
             </intent-filter>
         </activity>
+        <!--唤醒后识别-->
+        <activity
+            android:name=".baiduyuyin.ActivityWakeUpRecog"
+            android:configChanges="orientation|keyboardHidden|screenLayout"
+            android:label="唤醒后识别"
+            android:screenOrientation="portrait"
+            android:theme="@style/MsgAppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.baidu.speech.recognizerdemo.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+
         <activity
             android:name=".SettingsActivity"
             android:label="设置"
             android:theme="@style/MsgAppTheme" />
+
         <activity android:name=".ThreeLevelMenuActivity"></activity>
     </application>
 
