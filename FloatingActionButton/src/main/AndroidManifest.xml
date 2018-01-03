@@ -48,16 +48,16 @@
         android:theme="@style/AppTheme">
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
-            android:value="kIfWAEUylfTcs4pfDAchxxDugdzCYGjI" />
+            android:value="iOPhU0fBw2XnGcrVtytHWZzGitvhZA4i" />
         <meta-data
             android:name="com.baidu.speech.APP_ID"
-            android:value="10473876" />
+            android:value="10616099" />
         <meta-data
             android:name="com.baidu.speech.API_KEY"
-            android:value="1DmeU09QoZZPAwQo6iIGdo7o" />
+            android:value="cDCDoaZ8Wn2dmAsefvtRCEnT" />
         <meta-data
             android:name="com.baidu.speech.SECRET_KEY"
-            android:value="Qw64R7AGFZa77UiD4DaOMGnBFGAUhW6c" />
+            android:value="00e7c73b009af166abf6dc119ec88afe" />
 
         <service
             android:name="com.baidu.speech.VoiceRecognitionService"
