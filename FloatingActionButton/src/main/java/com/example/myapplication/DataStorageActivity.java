@@ -2,13 +2,17 @@ package com.example.myapplication;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
+import android.os.Handler;
+import android.os.Message;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.myapplication.baiduyuyin.WakeUpRecogService;
 import com.example.myapplication.base.BaseActivity;
 import com.example.myapplication.base.MyApplication;
 import com.example.myapplication.db.MyDatabaseHelper;
@@ -26,8 +30,10 @@ public class DataStorageActivity extends BaseActivity implements View.OnClickLis
     private Button readerBtn, writerBtn, createBtn, addDataBtn;
     private TextView readerTv;
     private ClearEditText writerEt;
-    private static final String TAG = "DataStorageActivity";
+    private static final String TAG = "aaa";
     private MyDatabaseHelper databaseHelper;
+    public static Handler handler;
+    private Intent intentWRService;
 
     @Override
     public int getLayoutId() {
@@ -38,6 +44,15 @@ public class DataStorageActivity extends BaseActivity implements View.OnClickLis
     public void initData() {
         setToolbarTitle("数据存储");
         databaseHelper = new MyDatabaseHelper(MyApplication.getAppContext(), "zjf.db", null, 1);
+        handler=new Handler(){
+            @Override
+            public void handleMessage(Message msg) {
+                super.handleMessage(msg);
+                if(msg.what==1){
+                    writerEt.setText((String)msg.obj);
+                }
+            }
+        };
     }
 
     @Override
@@ -52,8 +67,19 @@ public class DataStorageActivity extends BaseActivity implements View.OnClickLis
         createBtn.setOnClickListener(this);
         readerBtn.setOnClickListener(this);
         writerBtn.setOnClickListener(this);
+        intentWRService=new Intent(this, WakeUpRecogService.class);
+        Log.i(TAG, "唤醒服务启动");
+        startService(intentWRService);
 
+    }
 
+    @Override
+    protected void onDestroy() {
+
+        stopService(intentWRService);
+        intentWRService=null;
+        Log.i(TAG, "唤醒服务停止");
+        super.onDestroy();
     }
 
     @Override
