@@ -32,11 +32,13 @@ import com.example.myapplication.base.BaseActivity;
 import com.example.myapplication.bean.ContactSortModel;
 import com.example.myapplication.utils.PinyinComparator;
 import com.example.myapplication.utils.PinyinUtils;
+import com.example.myapplication.view.CustomPop;
 import com.example.myapplication.view.SideBar;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+
 
 public class ContactsActivity extends BaseActivity implements SearchView.OnQueryTextListener, View.OnClickListener {
     private static final String TAG = "ContactsActivity";
@@ -95,6 +97,7 @@ public class ContactsActivity extends BaseActivity implements SearchView.OnQuery
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Toast.makeText(getApplication(), ((ContactSortModel) sortAdapter.getItem(i)).getName(), Toast.LENGTH_SHORT).show();
+                new CustomPop(getApplicationContext()).showAsDropDown(view);
             }
         });
         listView.setOnScrollListener(new AbsListView.OnScrollListener() {

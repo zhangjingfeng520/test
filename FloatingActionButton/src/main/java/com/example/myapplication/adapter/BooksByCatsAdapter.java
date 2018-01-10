@@ -34,6 +34,7 @@ public class BooksByCatsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
     public static final int OVER = 1;
     private int status = 1;
     private int count = 0;
+    private onMyClickListener listener;
 
     public BooksByCatsAdapter(Context context, List<BooksByCats.BooksBean> list) {
         mList = list;
@@ -76,12 +77,17 @@ public class BooksByCatsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
     }
 
     @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
         if (holder instanceof ItemHolder) {
             ItemHolder itemHolder = (ItemHolder) holder;
             itemHolder.textView.setText(mList.get(position).getTitle());
             Glide.with(mContext).load(ApiService.IMG_BASE_URL + mList.get(position).getCover()).into(itemHolder.imageView);
-
+            itemHolder.dialogTv.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    listener.onClickListener(position,view);
+                }
+            });
         } else if (holder instanceof FooterHolder) {
             FooterHolder footerHolder = (FooterHolder) holder;
 
@@ -109,11 +115,13 @@ public class BooksByCatsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
     class ItemHolder extends RecyclerView.ViewHolder {
         private ImageView imageView;
         private TextView textView;
+        private TextView dialogTv;
 
         public ItemHolder(View itemView) {
             super(itemView);
             imageView = (ImageView) itemView.findViewById(R.id.icon);
             textView = (TextView) itemView.findViewById(R.id.name);
+            dialogTv=(TextView)itemView.findViewById(R.id.dialog_tv);
         }
     }
 
@@ -130,5 +138,11 @@ public class BooksByCatsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
 
         }
     }
+   public interface onMyClickListener{
+        void onClickListener(int position,View view);
+   }
+   public void setMyClickListener(onMyClickListener listener){
+       this.listener=listener;
+   }
 
 }

@@ -110,6 +110,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         myMapList.add(new MyMap("语音识别", "15"));
         myMapList.add(new MyMap("语音唤醒", "16"));
         myMapList.add(new MyMap("唤醒后识别", "17"));
+        myMapList.add(new MyMap("多媒体", "18"));
 
     }
 
@@ -228,6 +229,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         intent.setClass(MainActivity.this,ActivityWakeUpRecog.class);
                         startActivity(intent);
                         break;
+                    case 18:
+                        intent.setClass(MainActivity.this,MediaActivity.class);
+                        startActivity(intent);
+                        break;
                     default:
                         break;
                 }
@@ -242,12 +247,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 if (verticalOffset == 0) {
                     toolbarState = CollapsingToolbarLayoutState.EXPANDED;
                     collapsingToolbarLayout.setTitle("FAB1");
+                    fabBtn.setVisibility(View.GONE);
 //                    nestedScrollView.setNestedScrollingEnabled(false);//appBarLayout不响应滚动事件
 
                 } else if (Math.abs(verticalOffset) >= appBarLayout.getTotalScrollRange()) {
                     toolbarState = CollapsingToolbarLayoutState.COLLAPSED;
                     collapsingToolbarLayout.setTitle("");
                     buttonBarLayout.setVisibility(View.VISIBLE);
+                    fabBtn.setVisibility(View.VISIBLE);
 
                 } else {
                     if (toolbarState != CollapsingToolbarLayoutState.INTERNEDIATE) {

@@ -10,4 +10,6 @@
     <color name="hui">#aaaaaa</color>
     <color name="qianhui">#eeeeee</color>
     <color name="test">#4F41FD</color>
+    //pop
+    <color name="drop_pop_menu_bg_color">#a0000000</color>
 </resources>
