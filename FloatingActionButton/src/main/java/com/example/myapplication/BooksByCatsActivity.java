@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import android.graphics.Color;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -97,15 +98,14 @@ public class BooksByCatsActivity extends BaseActivity implements View.OnClickLis
     private void initPopupWindow(int position, View view) {
         mDropPopMenu = new DropPopMenu(this);
 
-//        //三角指示颜色，不设置默认黑色
-//        mDropPopMenu.setTriangleIndicatorViewColor(Color.WHITE);
-//        //背景颜色，不设置默认黑色
-//        mDropPopMenu.setBackgroundResource(R.drawable.bg_drop_pop_menu_white_shap);
-//        //字体颜色，不设置默认白色
-//        mDropPopMenu.setItemTextColor(Color.BLACK);
+        //三角指示颜色，不设置默认黑色
+        mDropPopMenu.setTriangleIndicatorViewColor(Color.WHITE);
+        //背景颜色，不设置默认黑色
+        mDropPopMenu.setBackgroundResource(R.drawable.bg_drop_pop_menu_white_shap);
+        //字体颜色，不设置默认白色
+        mDropPopMenu.setItemTextColor(Color.BLACK);
 //        //是否启用前置小图标
 //        mDropPopMenu.setIsShowIcon(true);
-
         mDropPopMenu.setOnItemClickListener(new DropPopMenu.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id, MenuItem menuItem) {

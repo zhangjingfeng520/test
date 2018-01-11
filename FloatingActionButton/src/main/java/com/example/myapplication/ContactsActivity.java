@@ -32,6 +32,7 @@ import com.example.myapplication.base.BaseActivity;
 import com.example.myapplication.bean.ContactSortModel;
 import com.example.myapplication.utils.PinyinComparator;
 import com.example.myapplication.utils.PinyinUtils;
+import com.example.myapplication.utils.PopupWindowUtils;
 import com.example.myapplication.view.CustomPop;
 import com.example.myapplication.view.SideBar;
 
@@ -50,6 +51,7 @@ public class ContactsActivity extends BaseActivity implements SearchView.OnQuery
     private SortAdapter sortAdapter;
     private int status = 0;
     private CoordinatorLayout rootLayout;
+    private CustomPop customPop;
 
 
     @Override
@@ -77,7 +79,6 @@ public class ContactsActivity extends BaseActivity implements SearchView.OnQuery
         getPhoneContacts("我");
 
         initEvents();
-
     }
 
     private void initEvents() {
@@ -97,7 +98,17 @@ public class ContactsActivity extends BaseActivity implements SearchView.OnQuery
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Toast.makeText(getApplication(), ((ContactSortModel) sortAdapter.getItem(i)).getName(), Toast.LENGTH_SHORT).show();
-                new CustomPop(getApplicationContext()).showAsDropDown(view);
+//                customPop=new CustomPop(ContactsActivity.this);
+//                customPop.showAsDropDown(view);
+                ArrayList<String> list = new ArrayList<String>();
+                list.add("添加好友");
+                list.add("扫一扫");
+                list.add("支付宝");
+                list.add("视频聊天");
+                list.add("个人中心");
+                PopupWindowUtils popupWindowUtils = new PopupWindowUtils(ContactsActivity.this, view, list);
+                popupWindowUtils.show();
+
             }
         });
         listView.setOnScrollListener(new AbsListView.OnScrollListener() {
@@ -130,7 +141,6 @@ public class ContactsActivity extends BaseActivity implements SearchView.OnQuery
 
 
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -196,7 +206,7 @@ public class ContactsActivity extends BaseActivity implements SearchView.OnQuery
                 ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME,
                 ContactsContract.CommonDataKinds.Phone.NUMBER};
 
-        String selection = ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME+ "=?"
+        String selection = ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME + "=?"
                 + " AND " + ContactsContract.CommonDataKinds.Phone.TYPE + "='" +
                 ContactsContract.CommonDataKinds.Phone.TYPE_MOBILE + "'";
 

@@ -45,6 +45,7 @@ public class TestService extends Service {
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         Log.d("TestService", "onStartCommand: ");
+//        stopSelf();//ֹͣ
         return super.onStartCommand(intent, flags, startId);
     }
 

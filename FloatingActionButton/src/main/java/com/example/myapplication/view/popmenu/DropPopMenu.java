@@ -212,7 +212,7 @@ public class DropPopMenu {
 
     public void show(final View parent) {
         mBtnView = parent;
-        setBackgroundAlpha(50f);
+        setBackgroundAlpha(0.7f);//0不透明，1完全透明
         mDropPopLayout.requestFocus();
 
         mIsShowAtUp = false;

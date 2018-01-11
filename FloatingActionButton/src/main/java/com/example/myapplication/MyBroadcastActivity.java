@@ -18,6 +18,7 @@ import android.os.Handler;
 import android.os.IBinder;
 import android.os.Message;
 import android.support.annotation.RequiresApi;
+import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
@@ -199,12 +200,12 @@ public class MyBroadcastActivity extends BaseActivity implements ServiceConnecti
                     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
                     @Override
                     public void onClick(View view) {
-                        final Notification.Builder builder = new Notification.Builder(MyBroadcastActivity.this)
+                        final NotificationCompat.Builder builder = new NotificationCompat.Builder(MyBroadcastActivity.this)
                                 .setTicker("Ticker")
                                 .setContentTitle("我是标题")
                                 .setContentText("我是内容")
+                                .setWhen(System.currentTimeMillis())
                                 .setContentIntent(PendingIntent.getActivity(MyBroadcastActivity.this, 1, getIntent(), 0))
-                                .setLights(0xFF0000, 2000, 2000)
                                 .setDefaults(Notification.DEFAULT_ALL)
                                 .setSmallIcon(R.mipmap.ic_launcher);
                         Handler handler = new Handler();
@@ -214,6 +215,7 @@ public class MyBroadcastActivity extends BaseActivity implements ServiceConnecti
                                 notificationManager.notify(R.layout.activity_my_broad_cast, builder.build());
                             }
                         }, 5000);
+
                     }
                 });
 

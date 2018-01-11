@@ -1,11 +1,10 @@
-package com.example.myapplication.view;
+package com.example.myapplication.utils;
 
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,50 +18,51 @@ import android.widget.Toast;
 
 import com.example.myapplication.R;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Administrator on 2018/1/10.
+ * Created by Administrator on 2018/1/11.
  */
-public class CustomPop extends PopupWindow {
+
+public class PopupWindowUtils {
     private Context context;
     private View view;
     private ListView listView;
     private List<String> list;
+    private PopupWindow popupWindow;
 
-    public CustomPop(Context context) {
-        this(context,ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-    }
-
-    public CustomPop(Context context,int with, int height) {
+    public PopupWindowUtils(Context context, View view, List<String> list) {
         this.context = context;
-        setWidth(with);
-        setHeight(height);
-        //设置可以获得焦点
-        setFocusable(true);
-        //设置弹窗内可点击
-        setTouchable(true);
-        //设置弹窗外可点击
-        setOutsideTouchable(true);
-        //
-        setBackgroundDrawable(new BitmapDrawable());
-        view = LayoutInflater.from(context).inflate(R.layout.custom_pop, null);
-        setContentView(view);
-//        setAnimationStyle(R.style.PopupAnimation);
-        initData();
+        this.view = view;
+        this.list = list;
+        initPop();
     }
 
-    private void initData() {
-        listView = (ListView) view.findViewById(R.id.title_list);
-        list = new ArrayList<String>();
-        list.add("添加好友");
-        list.add("扫一扫");
-        list.add("支付宝");
-        list.add("视频聊天");
-        //设置列表的适配器
-        listView.setAdapter(new MyListAdapter());
+    private void initPop() {
+        View contentView = LayoutInflater.from(context).inflate(R.layout.custom_pop, null);
+        popupWindow = new PopupWindow(contentView, ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        //设置可以获得焦点
+        popupWindow.setFocusable(true);
+        //设置弹窗内可点击
+        popupWindow.setTouchable(true);
+        //设置弹窗外可点击
+        popupWindow.setOutsideTouchable(true);
+        //
+        popupWindow.setBackgroundDrawable(new BitmapDrawable());
+        //透明度
+        setBackgroundAlpha(0.8f);
+        //pop取消监听
+        popupWindow.setOnDismissListener(new PopupWindow.OnDismissListener() {
+            @Override
+            public void onDismiss() {
+                setBackgroundAlpha(1f);
+
+            }
+        });
+//        setAnimationStyle(R.style.PopupAnimation);
+        initData(contentView);
     }
+
     /***
      * 设置添加屏幕的背景透明度* @param bgAlpha
      */
@@ -72,6 +72,15 @@ public class CustomPop extends PopupWindow {
         ((Activity) context).getWindow().setAttributes(layoutParams);
     }
 
+    private void initData(View contentView) {
+        listView = (ListView) contentView.findViewById(R.id.title_list);
+        //设置列表的适配器
+        listView.setAdapter(new MyListAdapter());
+    }
+
+    public void show() {
+        popupWindow.showAsDropDown(view);
+    }
 
     public class MyListAdapter extends BaseAdapter {
         @Override
@@ -102,10 +111,10 @@ public class CustomPop extends PopupWindow {
             //设置文字与图标的间隔
             textView.setCompoundDrawablePadding(10);
             //设置在文字的左边放一个图标
-//            textView.setCompoundDrawablesWithIntrinsicBounds(R.drawable.message_left, null, null, null);
             Drawable drawable = context.getResources().getDrawable(R.mipmap.bofang);
             drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());
             textView.setCompoundDrawables(drawable, null, null, null);
+
             return textView;
         }
 
